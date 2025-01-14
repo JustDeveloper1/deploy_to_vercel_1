@@ -14,6 +14,7 @@ export async function generateStaticParams() {
   }));
 }
 
+/*
 export function GET(
   request: Request,
   {
@@ -52,3 +53,4 @@ export function GET(
     status: 200,
   });
 }
+*/

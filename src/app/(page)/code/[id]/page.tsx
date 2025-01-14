@@ -16,8 +16,14 @@ export default function ViewCode() {
     {
       success: true;
       data: {
-        paste: string;
-        language: string;
+        id: number;
+        authorId: string;
+        code: string;
+        langDone: string;
+        name: string;
+        created: number;
+        updated: number;
+        status: number;
       };
     },
     { success: false; error: any }

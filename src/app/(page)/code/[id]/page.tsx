@@ -1,5 +1,3 @@
-export async function generateStaticParams() {}
-
 "use client";
 import { useParams } from "next/navigation";
 import Image from "next/image";
@@ -11,6 +9,7 @@ import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 import { Skeleton } from "@/components/ui/skeleton";
 
+export async function generateStaticParams() {}
 export default function ViewCode() {
   const params = useParams<{ id: string }>();
 

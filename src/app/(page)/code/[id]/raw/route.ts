@@ -2,8 +2,14 @@ import { viewCode } from "@/lib/actions/code";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
-export function fetchCode() {
-  const params = useParams<{ id: string }>();
+export async function GET(
+  request: Request,
+  {
+    params,
+  }: {
+    params: Promise<{ id: string }>;
+  },
+) {
 
   const { data, isLoading } = useSWR<
     {
@@ -22,7 +28,11 @@ export function fetchCode() {
     { success: false; error: any }
   >(`https://api.juststudio.is-a.dev/cs/${params.id}`, fetcher);
 
-  return new Response(data.code, {
+  if (!data.success)
+    return new Response("Code not found.", {
+      status: 404,
+    });
+  return new Response(data.data.code, {
     status: 200,
   });
 }

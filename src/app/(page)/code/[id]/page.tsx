@@ -63,8 +63,8 @@ export default function ViewCode() {
             <Skeleton className="h-[calc(60vh)] w-full" />
           ) : (
             <ViewCodeEditor
-              language={isLoading ? "plaintext" : data!.data?.language}
-              code={isLoading ? "Loading..." : data!.data?.paste}
+              language={isLoading ? "plaintext" : data!.data?.langDone}
+              code={isLoading ? "Loading..." : data!.data?.code}
               id={params.id}
             />
           )}

@@ -62,12 +62,14 @@ export default function ViewCode() {
         <CardContent className="-mt-4">
           {isLoading ? (
             <Skeleton className="h-[calc(60vh)] w-full" />
-          ) : (
+          ) : data ? (
             <ViewCodeEditor
-              language={isLoading ? "plaintext" : data!.data?.langDone}
-              code={isLoading ? "Loading..." : data!.data?.code}
+              language={data.data.langDone}
+              code={data.data.code}
               id={params.id}
             />
+          ) : (
+            <p>Error loading code.</p>
           )}
         </CardContent>
       </Card>

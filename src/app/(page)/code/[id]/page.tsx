@@ -9,7 +9,6 @@ import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export async function generateStaticParams() {}
 export default function ViewCode() {
   const params = useParams<{ id: string }>();
 

@@ -10,7 +10,7 @@ export function GET(
     params: Promise<{ id: string }>;
   },
 ) {
-
+  const params = useParams<{ id: string }>();
   const { data, isLoading } = useSWR<
     {
       success: true;

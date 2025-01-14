@@ -2,7 +2,7 @@ import { viewCode } from "@/lib/actions/code";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
-export function() {
+export function fetchCode() {
   const params = useParams<{ id: string }>();
 
   const { data, isLoading } = useSWR<
@@ -22,7 +22,7 @@ export function() {
     { success: false; error: any }
   >(`https://api.juststudio.is-a.dev/cs/${params.id}`, fetcher);
 
-  return new Response(code.data.code, {
+  return new Response(data.code, {
     status: 200,
   });
 }

@@ -2,6 +2,9 @@ import { viewCode } from "@/lib/actions/code";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
+export const dynamic = "force-static";
+export const revalidate = 10;
+
 export function GET(
   request: Request,
   {

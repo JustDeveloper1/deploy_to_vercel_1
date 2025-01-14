@@ -32,7 +32,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run NPM
-        run: nmp i
+        run: npm i
       - name: Detect package manager
         id: detect-package-manager
         run: |

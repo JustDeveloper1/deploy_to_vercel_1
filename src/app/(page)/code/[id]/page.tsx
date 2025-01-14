@@ -1,3 +1,4 @@
+import { generateStaticParams } from './params';
 "use client";
 import { useParams } from "next/navigation";
 import Image from "next/image";
@@ -8,15 +9,6 @@ import { ViewCodeEditor } from "@/components/view-code-editor";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 import { Skeleton } from "@/components/ui/skeleton";
-
-export async function generateStaticParams() {
-  const response = await fetch('https://api.juststudio.is-a.dev/cs');
-  const codes = await response.json();
-  
-  return codes.map((code: { id: string }) => ({
-    id: code.id.toString(),
-  }));
-}
 
 export default function ViewCode() {
   const params = useParams<{ id: string }>();

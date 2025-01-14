@@ -10,7 +10,6 @@ export function GET(
     params: Promise<{ id: string }>;
   },
 ) {
-  const params = useParams<{ id: string }>();
   const { data, isLoading } = useSWR<
     {
       success: true;
@@ -26,7 +25,7 @@ export function GET(
       };
     },
     { success: false; error: any }
-  >(`https://api.juststudio.is-a.dev/cs/${params.id}`, fetcher);
+  >(`https://api.juststudio.is-a.dev/cs/${params}`, fetcher);
 
   if (!data.success)
     return new Response("Code not found.", {

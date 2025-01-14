@@ -1,21 +1,27 @@
-import { viewCode } from "@/lib/actions/code";
+import useSWR from "swr";
+import fetcher from "@/lib/fetch";
 
-export async function GET(
-  request: Request,
-  {
-    params,
-  }: {
-    params: Promise<{ id: string }>;
-  },
-) {
-  const code = await viewCode((await params).id);
+export default function ViewCode() {
+  const params = useParams<{ id: string }>();
 
-  if (!code.success)
-    return new Response("Paste not found.", {
-      status: 404,
-    });
+  const { data, isLoading } = useSWR<
+    {
+      success: true;
+      data: {
+        id: number;
+        authorId: string;
+        code: string;
+        langDone: string;
+        name: string;
+        created: number;
+        updated: number;
+        status: number;
+      };
+    },
+    { success: false; error: any }
+  >(`https://api.juststudio.is-a.dev/cs/${params.id}`, fetcher);
 
-  return new Response(code.data.paste, {
+  return new Response(code.data.code, {
     status: 200,
   });
 }

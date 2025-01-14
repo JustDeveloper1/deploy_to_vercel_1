@@ -10,69 +10,76 @@ import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 import { Skeleton } from "@/components/ui/skeleton";
 
-export default function ViewCode() {
-  const params = useParams<{ id: string }>();
-
-  const { data, isLoading } = useSWR<
-    {
-      success: true;
-      data: {
-        id: number;
-        authorId: string;
-        code: string;
-        langDone: string;
-        name: string;
-        created: number;
-        updated: number;
-        status: number;
-      };
-    },
-    { success: false; error: any }
-  >(`https://api.juststudio.is-a.dev/cs/${params.id}`, fetcher);
-
-  return (
-    <main className="p-8 px-10">
-      <header className="pb-4 leading-tight">
-        <span className="flex items-center gap-2">
-          <Image
-            src="/static/images/logo-light.png"
-            alt="Pastebon Logo"
-            width={48}
-            height={48}
-            priority
-            className="hidden size-6 items-center dark:block"
-          />
-          <Image
-            src="/static/images/logo-dark.png"
-            alt="Pastebon Logo"
-            width={48}
-            height={48}
-            priority
-            className="block size-6 items-center dark:hidden"
-          />
-          <p className="font-grotesque text-xl font-medium">Pastebon</p>
-        </span>
-        <p className="text-sm">
-          Paste your codes, logs, and errors{" "}
-          <strong className="font-semibold underline">anonymously</strong>.
-        </p>
-      </header>
-      <Card>
-        <CardHeader> </CardHeader>
-        <CardContent className="-mt-4">
-          {isLoading ? (
-            <Skeleton className="h-[calc(60vh)] w-full" />
-          ) : data ? (
-            <ViewCodeEditor
-              language={data.data.langDone}
-              code={data.data.code}
-              id={params.id}
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const params111 = (await params).id;
+  return default function ViewCode() {
+    const params000 = useParams<{ id: string }>() || params111;
+  
+    const { data, isLoading } = useSWR<
+      {
+        success: true;
+        data: {
+          id: number;
+          authorId: string;
+          code: string;
+          langDone: string;
+          name: string;
+          created: number;
+          updated: number;
+          status: number;
+        };
+      },
+      { success: false; error: any }
+    >(`https://api.juststudio.is-a.dev/cs/${params000.id}`, fetcher);
+  
+    return (
+      <main className="p-8 px-10">
+        <header className="pb-4 leading-tight">
+          <span className="flex items-center gap-2">
+            <Image
+              src="/static/images/logo-light.png"
+              alt="Pastebon Logo"
+              width={48}
+              height={48}
+              priority
+              className="hidden size-6 items-center dark:block"
             />
-          ) : (
-            <p>Error loading code.</p>
-          )}
-        </CardContent>
-      </Card>
-    </main>
-  );
+            <Image
+              src="/static/images/logo-dark.png"
+              alt="Pastebon Logo"
+              width={48}
+              height={48}
+              priority
+              className="block size-6 items-center dark:hidden"
+            />
+            <p className="font-grotesque text-xl font-medium">Pastebon</p>
+          </span>
+          <p className="text-sm">
+            Paste your codes, logs, and errors{" "}
+            <strong className="font-semibold underline">anonymously</strong>.
+          </p>
+        </header>
+        <Card>
+          <CardHeader> </CardHeader>
+          <CardContent className="-mt-4">
+            {isLoading ? (
+              <Skeleton className="h-[calc(60vh)] w-full" />
+            ) : data ? (
+              <ViewCodeEditor
+                language={data.data.langDone}
+                code={data.data.code}
+                id={params000.id}
+              />
+            ) : (
+              <p>Error loading code.</p>
+            )}
+          </CardContent>
+        </Card>
+      </main>
+    );
+  }
 }

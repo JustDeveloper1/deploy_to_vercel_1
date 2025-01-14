@@ -2,7 +2,7 @@ import { viewCode } from "@/lib/actions/code";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
-export async function GET(
+export function GET(
   request: Request,
   {
     params,

@@ -2,7 +2,7 @@ import { viewCode } from "@/lib/actions/code";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
-export default function() {
+export function() {
   const params = useParams<{ id: string }>();
 
   const { data, isLoading } = useSWR<

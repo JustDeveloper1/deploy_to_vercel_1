@@ -58,7 +58,7 @@ export default function ViewCode() {
         </p>
       </header>
       <Card>
-        <CardHeader></CardHeader>
+        <CardHeader> </CardHeader>
         <CardContent className="-mt-4">
           {isLoading ? (
             <Skeleton className="h-[calc(60vh)] w-full" />

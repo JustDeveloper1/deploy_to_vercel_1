@@ -2,7 +2,6 @@ import { viewCode } from "@/lib/actions/code";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
-export async function generateStaticParams() {}
 export function GET(
   request: Request,
   {

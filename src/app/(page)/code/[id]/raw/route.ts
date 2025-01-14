@@ -27,6 +27,11 @@ export function GET(
     { success: false; error: any }
   >(`https://api.juststudio.is-a.dev/cs/${params}`, fetcher);
 
+  if (!(data)) {
+    return new Response("Unknown error.", {
+      status: 500,
+    });
+  }
   if (!data.success)
     return new Response("Code not found.", {
       status: 404,

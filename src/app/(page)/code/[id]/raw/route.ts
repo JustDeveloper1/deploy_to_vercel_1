@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 export const revalidate = 10;
 
 export async function generateStaticParams() {
-  return {[{id:"1"}]}
+  return {[{id:"1"}]};
 }
 
 export function GET(

@@ -26,6 +26,7 @@ SOFTWARE.
 
 const __settings__loop_time = 500;
 
+document.body.style.overflow = 'hidden';
 (function (_0x31e751, _0x208ed0) {
     const _0x26a277 = _0x24f6, _0x484555 = _0x31e751();
     while (!![]) {

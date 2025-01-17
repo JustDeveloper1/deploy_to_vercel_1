@@ -1,5 +1,4 @@
-import { generateStaticParams } from './params'; export { generateStaticParams };
-"use client";
+import { generateStaticParams } from './params'; export { generateStaticParams };"use client";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 

@@ -9,9 +9,9 @@ export async function generateStaticParams() {
   const response = await fetch('https://api.juststudio.is-a.dev/cs/ids');
   const ids = await response.json();
 
-  return ids.map((id: string) => ({
+  return [{id:"1"}] /*ids.map((id: string) => ({
     id,
-  }));
+  }));*/
 }
 
 export function GET(

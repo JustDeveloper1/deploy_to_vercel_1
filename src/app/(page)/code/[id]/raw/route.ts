@@ -5,13 +5,8 @@ import fetcher from "@/lib/fetch";
 export const dynamic = "force-static";
 export const revalidate = 10;
 
-export async function generateStaticParams() {/*
-  const response = await fetch('https://api.juststudio.is-a.dev/cs/ids');
-  const ids = await response.json();*/
-
-  return {}/*ids.map((id: string) => ({
-    id,
-  }));*/
+export async function generateStaticParams() {
+  return {[{id:"1"}]}
 }
 
 export function GET(

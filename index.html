@@ -1,3 +1,33 @@
+<!-- 
+
+MIT License
+
+Copyright (c) 2024 JustStudio. <https://juststudio.is-a.dev/>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+\-->
+
+
+<!-- JustStudio. /-->
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +44,7 @@
     <meta property="og:title" content="CodeShare">
     <style>
       @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+      @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
       .center-xy {
         top: 50%;
         left: 50%;
@@ -83,43 +114,29 @@
       #cb-replay:hover {
         fill: #888;
       }
+      .codeshare, .copyright {
+        color: white;
+        font-family: 'Roboto Mono';
+        font-size: 15px;
+      }
+      .copyright {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        translate: -50% 0%;
+        -webkit-translate: -50% 0%;
+        text-decoration: underline;
+        opacity: 0.2;
+        font-family: 'Rubik'
+      }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-    <script src="complete_mess.js"></script>
-    <script defer>
-      var $copyContainer = $(".copy-container"),
-          $replayIcon = $('#cb-replay'),
-          $copyWidth = $('.copy-container').find('p').width();
-      var mySplitText = new SplitText($copyContainer, {type:"words"}),
-          splitTextTimeline = new TimelineMax();
-      var handleTL = new TimelineMax();      
-      var tl = new TimelineMax();
-          tl.add(function(){
-            animateCopy();
-            blinkHandle();
-          }, 0.2)
-      function animateCopy() {
-        mySplitText.split({type:"chars, words"}) 
-        splitTextTimeline.staggerFrom(mySplitText.chars, 0.001, {autoAlpha:0, ease:Back.easeInOut.config(1.7), onComplete: function(){
-          animateHandle()
-        }}, 0.05);
-      }
-      function blinkHandle() {
-        handleTL.fromTo('.handle', 0.4, {autoAlpha:0},{autoAlpha:1, repeat:-1, yoyo:true}, 0);
-      }
-      function animateHandle() {
-        handleTL.to('.handle', 0.7, {x:$copyWidth, ease:SteppedEase.config(12)}, 0.05);
-      }
-      $('#cb-replay').on('click', function(){
-        splitTextTimeline.restart()
-        handleTL.restart()
-      })
-    </script>
+    <script src="typing_anim.js"></script>
   </head>
   <body>
     <div class="container">
+    <a href="https://github.com/JustStudio7/CodeShare/blob/main/LICENSE" target="_blank"><span class="copyright">© 2024-2025 JustStudio.</span></a>
     <div class="copy-container center-xy">
+        <span class="codeshare">CodeShare</span>
         <p>
           503, service unavailable.
         </p>

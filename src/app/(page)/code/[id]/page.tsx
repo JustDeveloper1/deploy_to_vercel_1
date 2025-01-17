@@ -76,7 +76,7 @@ function ViewCode({ initialId }: { initialId: string }) {
             <ViewCodeEditor
               language={data.data.langDone}
               code={data.data.code}
-              id={params.id}
+              id={params}
             />
           ) : (
             <p>Error loading code.</p>

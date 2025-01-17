@@ -1,5 +1,5 @@
 import{generateStaticParams}from'./params';export{generateStaticParams};
-import { useParams } from "next/navigation";
+/*import { useParams } from "next/navigation";*/
 import Image from "next/image";
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -9,17 +9,19 @@ import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 import { Skeleton } from "@/components/ui/skeleton";
 
+let paramsID;
 export default async function Page({
   params,
 }: {
   params: Promise<{ id: string }>
 }) {
   const params111 = (await params).id;
+  paramsID = params111;
   return <ViewCode initialId={params111} />;
 }
 
 function ViewCode({ initialId }: { initialId: string }) {
-  const params = useParams<{ id: string }>() || { id: initialId };
+  const params = paramsID || initialId;//useParams<{ id: string }>()|| { id: initialId };
 
   const { data, isLoading } = useSWR<
     {
@@ -36,7 +38,7 @@ function ViewCode({ initialId }: { initialId: string }) {
       };
     },
     { success: false; error: any }
-  >(`https://api.juststudio.is-a.dev/cs/${params.id}`, fetcher);
+  >(`https://api.juststudio.is-a.dev/cs/${params}`, fetcher);
 
   return (
     <main className="p-8 px-10">

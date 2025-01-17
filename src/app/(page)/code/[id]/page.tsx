@@ -9,7 +9,7 @@ import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 import { Skeleton } from "@/components/ui/skeleton";
 
-let paramsID;
+let paramsID: string;
 export default async function Page({
   params,
 }: {

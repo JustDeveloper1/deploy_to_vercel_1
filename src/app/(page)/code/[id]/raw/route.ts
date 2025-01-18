@@ -1,15 +1,9 @@
+'use server'
+
 import { viewCode } from "@/lib/actions/code";
-import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
-export const dynamic = "force-static";
-export const revalidate = 10;
-
-export async function generateStaticParams() {
-  return [{id:"1"}];
-}
-
-export function GET(
+export async function GET(
   request: Request,
   {
     params,
@@ -17,32 +11,20 @@ export function GET(
     params: Promise<{ id: string }>;
   },
 ) {
-  const { data, isLoading } = useSWR<
-    {
-      success: true;
-      data: {
-        id: number;
-        authorId: string;
-        code: string;
-        langDone: string;
-        name: string;
-        created: number;
-        updated: number;
-        status: number;
-      };
-    },
-    { success: false; error: any }
-  >(`https://api.juststudio.is-a.dev/cs/${params}`, fetcher);
+  const id = await params || await params.id;
+  const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`);
+  const data = await response.json();
 
-  if (!(data)) {
+  if (!response.ok) {
     return new Response("Unknown error.", {
       status: 500,
     });
   }
-  if (!data.success)
+  if (!data.success) {
     return new Response("Code not found.", {
       status: 404,
     });
+  }
   return new Response(data.data.code, {
     status: 200,
   });

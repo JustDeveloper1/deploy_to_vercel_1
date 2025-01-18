@@ -11,7 +11,7 @@ export async function GET(
     params: Promise<{ id: string }>;
   },
 ) {
-  const id = await params || await params.id;
+  const id = await params;
   const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`);
   const data = await response.json();
 

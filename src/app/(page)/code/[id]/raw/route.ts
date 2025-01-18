@@ -4,14 +4,15 @@ import { viewCode } from "@/lib/actions/code";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
+/*
 export const dynamic = "force-static";
 export const revalidate = 10;
 
 export async function generateStaticParams() {
   return [{id:"1"}];
-}
+}*/
 
-export function GET(
+export async function GET(
   request: Request,
   {
     params,

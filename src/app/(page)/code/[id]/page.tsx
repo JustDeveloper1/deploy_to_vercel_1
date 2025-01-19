@@ -61,7 +61,7 @@ export default function ViewCode() {
             priority
             className="block size-6 items-center dark:hidden"
           />
-          <p className="font-grotesque text-xl font-medium">CodeShare</p>
+          <p className="font-rubik text-xl font-medium">CodeShare</p>
         </span>
         <p className="text-sm __hide">
           description{" "}

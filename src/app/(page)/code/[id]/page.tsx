@@ -47,7 +47,7 @@ export default function ViewCode() {
         <span className="flex items-center gap-2">
           <Image
             src="/static/images/logo-light.png"
-            alt="Pastebon Logo"
+            alt="CodeShare Logo"
             width={48}
             height={48}
             priority
@@ -55,17 +55,17 @@ export default function ViewCode() {
           />
           <Image
             src="/static/images/logo-dark.png"
-            alt="Pastebon Logo"
+            alt="CodeShare Logo"
             width={48}
             height={48}
             priority
             className="block size-6 items-center dark:hidden"
           />
-          <p className="font-grotesque text-xl font-medium">Pastebon</p>
+          <p className="font-grotesque text-xl font-medium">CodeShare</p>
         </span>
-        <p className="text-sm">
-          Paste your codes, logs, and errors{" "}
-          <strong className="font-semibold underline">anonymously</strong>.
+        <p className="text-sm __hide">
+          description{" "}
+          <strong className="font-semibold underline">here</strong>.
         </p>
       </header>
       <Card>

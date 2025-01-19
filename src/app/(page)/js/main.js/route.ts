@@ -15,19 +15,15 @@ async function getFileContent() {
         });
         return content;
     } catch (error) {
+        return false;
         console.error('Error reading file:', error);
     }
 }
 
-const fileContent = getFileContent() || null;
-
-type ResponseData = {
-  message: string
-}
-
-export function GET(
+export async function GET(
   request: Request,
 ) {
+  const fileContent = await getFileContent();
   if (fileContent)
     return new Response(fileContent, {
       status: 200,

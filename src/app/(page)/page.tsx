@@ -54,6 +54,8 @@ export default function Landing() {
         </CardContent>
       </Card>
     </main>
-    <Script src="/js/main.js" />
+    <>
+      <Script src="/js/main.js" />
+    </>
   );
 }

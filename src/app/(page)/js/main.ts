@@ -1,12 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
- 
-type ResponseData = {
-  message: string
-}
+import type { NextApiRequest, NextApiResponse } from 'next';
  
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse
 ) {
-  res.status(200).json({ message: 'Hello from Next.js!' })
+  res.setHeader('Content-Type', 'application/javascript');
+  res.status(200).send(`console.log('a')`);
 }

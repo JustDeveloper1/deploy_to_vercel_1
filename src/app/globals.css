@@ -90,9 +90,10 @@
   @apply bg-transparent;
 }
 
-.__hide, ._hide {
-  display: none !important;
-}
 ::-webkit-scrollbar-thumb {
   @apply rounded-full border-[1px] border-solid border-transparent bg-border bg-clip-padding;
+}
+
+.__hide, ._hide {
+  display: none !important;
 }

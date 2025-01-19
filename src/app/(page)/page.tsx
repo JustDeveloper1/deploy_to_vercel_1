@@ -15,6 +15,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { DoneDialog } from "@/components/done-dialog";
+import Script from 'next/script';
 
 export default function Landing() {
   const [code, setCode] = useState("");
@@ -53,6 +54,6 @@ export default function Landing() {
         </CardContent>
       </Card>
     </main>
-    <script src="/js/main.js"></script>
+    <Script src="/js/main.js" />
   );
 }

@@ -12,7 +12,7 @@ rimrafSync(out, {
 
 void OpenAPI.generateFiles({
   // input files
-  input: ["./src/config/pastebin.yml"],
+  input: ["./src/config/docs.yml"],
   output: out,
   groupBy: "tag",
 });

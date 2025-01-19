@@ -6,7 +6,7 @@ const filename = 'main'
 async function getFileContent() {
     try {
         let content;
-        fs.readFile(`../scripts/js/${filename}.js`, 'utf8', (err, data) => {
+        await fs.readFile(`../scripts/js/${filename}.js`, 'utf8', (err, data) => {
             if (err) {
                 console.error('Error reading file:', err);
                 return;
@@ -19,7 +19,7 @@ async function getFileContent() {
     }
 }
 
-const fileContent = getFileContent();
+const fileContent = getFileContent() || null;
 
 type ResponseData = {
   message: string
@@ -29,7 +29,7 @@ export function GET(
   request: Request,
 ) {
   if (fileContent)
-    return new Response(fileContent || null, {
+    return new Response(fileContent, {
       status: 200,
     });
   return new Response(null, {

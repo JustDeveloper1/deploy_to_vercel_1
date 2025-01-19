@@ -25,10 +25,10 @@ const grotesque = Bricolage_Grotesque({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pastebon",
-    template: "%s | Pastebon",
+    default: "CodeShare",
+    template: "%s | CodeShare",
   },
-  description: "yet another Pastebin.",
+  description: "by JustStudio.",
 };
 
 export default function RootLayout({

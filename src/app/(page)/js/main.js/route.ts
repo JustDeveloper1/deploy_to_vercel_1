@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import * as fs from 'fs';
+import * as fs from 'fs/promises';
 
 const filename = 'main'
 

@@ -12,7 +12,7 @@ export const config: NavConfig = {
       href: "",
       items: [
         {
-          title: "Paste",
+          title: "Code",
           items: [],
           href: "/",
           icon: ScrollText,

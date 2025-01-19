@@ -22,6 +22,11 @@ const grotesque = Bricolage_Grotesque({
   display: "swap",
   variable: "--font-grotesque",
 });
+const Rubik = localFont({
+  src: "./fonts/Rubik.woff2",
+  variable: "--font-rubik",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -40,7 +45,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          `${geistSans.variable} ${geistMono.variable} ${grotesque.variable}`,
+          `${geistSans.variable} ${geistMono.variable} ${grotesque.variable} ${Rubik.variable}`,
           "font-geist antialiased",
         )}
         suppressHydrationWarning

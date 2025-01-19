@@ -10,14 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "postinstall": "pnpm run db:migrate",
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "tsx -r dotenv/config src/lib/db/migrate.ts",
-    "db:drop": "drizzle-kit drop",
-    "db:pull": "drizzle-kit introspect",
-    "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio",
-    "db:check": "drizzle-kit check"
+    "postinstall": "pnpm -v"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^10.2.0",

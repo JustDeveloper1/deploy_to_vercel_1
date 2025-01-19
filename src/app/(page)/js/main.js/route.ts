@@ -24,15 +24,15 @@ const fileContent = getFileContent();
 type ResponseData = {
   message: string
 }
- 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
+
+export function GET(
+  request: Request,
 ) {
-  res.setHeader('Content-Type', 'application/javascript');
-  if (fileContent) {
-    res.status(200).send(fileContent);
-  } else {
-    res.status(404);
-  }
+  if (fileContent)
+    return new Response(fileContent, {
+      status: 200,
+    });
+  return new Response('', {
+    status: 404,
+  });
 }

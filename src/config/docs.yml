@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: Pastebon
+  title: CodeShare
   version: 1.0.0
   contact: {}
 servers:
@@ -10,7 +10,7 @@ paths:
     get:
       summary: View code
       description: Base URL - api.juststudio.is-a.dev
-      operationId: viewPaste
+      operationId: viewCode
       responses:
         "200":
           description: 200 - Code found
@@ -92,7 +92,7 @@ paths:
     put:
       summary: Upload code
       description: Base URL - api.juststudio.is-a.dev
-      operationId: createPaste
+      operationId: uploadCode
       requestBody:
         required: true
         content:

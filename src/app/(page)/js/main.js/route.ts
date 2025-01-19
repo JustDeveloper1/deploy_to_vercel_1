@@ -6,7 +6,7 @@ const filename = 'main'
 async function getFileContent() {
     try {
         let content;
-        await fs.readFile(`../scripts/js/${filename}.js`, 'utf8', (err, data) => {
+        await fs.readFile(`../js/${filename}.js`, 'utf8', (err, data) => {
             if (err) {
                 console.error('Error reading file:', err);
                 return;

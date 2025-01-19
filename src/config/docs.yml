@@ -4,16 +4,16 @@ info:
   version: 1.0.0
   contact: {}
 servers:
-  - url: https://pastebon.hexaa.lol
+  - url: https://api.juststudio.is-a.dev
 paths:
-  /api/paste/{pasteId}/view:
+  /cs/{Id}:
     get:
-      summary: View Paste
-      description: View Paste
+      summary: View code
+      description: Base URL - api.juststudio.is-a.dev
       operationId: viewPaste
       responses:
         "200":
-          description: 200 - Paste found
+          description: 200 - Code found
           content:
             application/json:
               schema:
@@ -22,24 +22,48 @@ paths:
                   data:
                     type: object
                     properties:
-                      language:
+                      id:
+                        type: number
+                        example: 1
+                      authorId:
                         type: string
-                        example: plaintext
-                      paste:
+                        example: 621950083759508500903931783035125166471302414334602580
+                      code:
                         type: string
-                        example: console.log("Hello World!")
+                        example: console&#46;log&#40;&#39;Hello&#44;&#32;World&#33;&#39;&#41;
+                      langDone:
+                        type: string
+                        example: js
+                      name:
+                        type: string
+                        example: The&#32;First&#32;Code
+                      created:
+                        type: number
+                        example: 1735553192776
+                      updated:
+                        type: number
+                        example: 0
+                      status:
+                        type: number
+                        example: 0
                   success:
                     type: boolean
                     example: true
               examples:
-                200 - Paste found:
+                200 - Code found:
                   value:
                     data:
-                      language: plaintext
-                      paste: console.log("Hello World!")
+                      id: 1
+                      authorId: 621950083759508500903931783035125166471302414334602580
+                      code: console&#46;log&#40;&#39;Hello&#44;&#32;World&#33;&#39;&#41;
+                      langDone: js
+                      name: The&#32;First&#32;Code
+                      created: 1735553192776
+                      updated: 0
+                      status: 0
                     success: true
         "400":
-          description: pasteId is invalid
+          description: Invalid code ID (Code not found)
           content:
             application/json:
               schema:
@@ -57,17 +81,17 @@ paths:
                     error: JSON object requested, multiple (or no) rows returned
                     success: false
     parameters:
-      - name: pasteId
+      - name: Id
         in: path
         required: true
         schema:
           type: string
-          example: ""
-        description: The Paste you want to see it's information.
-  /api/paste/create:
+          example: "1"
+        description: Code Id.
+  /cs/:
     put:
-      summary: Create Paste
-      description: Create Paste
+      summary: Upload code
+      description: Base URL - api.juststudio.is-a.dev
       operationId: createPaste
       requestBody:
         required: true

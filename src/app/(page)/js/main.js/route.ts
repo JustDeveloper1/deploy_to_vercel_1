@@ -29,10 +29,10 @@ export function GET(
   request: Request,
 ) {
   if (fileContent)
-    return new Response(fileContent, {
+    return new Response(fileContent || null, {
       status: 200,
     });
-  return new Response('', {
+  return new Response(null, {
     status: 404,
   });
 }

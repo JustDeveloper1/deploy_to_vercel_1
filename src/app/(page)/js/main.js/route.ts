@@ -5,18 +5,11 @@ const filename = 'main'
 
 async function getFileContent() {
     try {
-        let content;
-        await fs.readFile(`./src/js/${filename}.js`, 'utf8', (err, data) => {
-            if (err) {
-                console.error('Error reading file:', err);
-                return;
-            }
-            content = data;
-        });
+        const content = await fs.readFile(`./src/js/${filename}.js`, 'utf8');
         return content;
     } catch (error) {
-        return false;
         console.error('Error reading file:', error);
+        return false;
     }
 }
 

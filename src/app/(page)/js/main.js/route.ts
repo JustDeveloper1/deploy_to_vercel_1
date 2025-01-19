@@ -4,7 +4,7 @@ export async function GET(
   request: Request,
 ) {
   return new Response(`
-    console.log('a');
+    alert('This website is w.i.p.!');
   `, {
     status: 200,
   });

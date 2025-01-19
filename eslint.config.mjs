@@ -15,7 +15,6 @@ const eslintConfig = [
       "@typescript-eslint/no-empty-object-type": "off",
       "@typescript-eslint/ban-ts-comment": "off",
       "prefer-const": "off",
-      "@typescript-eslint/no-unused-expressions": "off",
     },
   }),
 ];

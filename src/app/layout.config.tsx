@@ -27,7 +27,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <>
         {logo}
-        <p className="font-grotesque text-xl font-medium">CodeShare</p>
+        <p className="font-rubik text-xl font-medium">CodeShare</p>
       </>
     ),
     transparentMode: "top",

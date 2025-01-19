@@ -5,7 +5,7 @@ export const logo = (
   <>
     <Image
       src="/static/images/logo-light.png"
-      alt="Pastebon Logo"
+      alt="CodeShare Logo"
       width={48}
       height={48}
       priority
@@ -13,7 +13,7 @@ export const logo = (
     />
     <Image
       src="/static/images/logo-dark.png"
-      alt="Pastebon Logo"
+      alt="CodeShare Logo"
       width={48}
       height={48}
       priority
@@ -27,7 +27,7 @@ export const baseOptions: BaseLayoutProps = {
     title: (
       <>
         {logo}
-        <p className="font-grotesque text-xl font-medium">Pastebon</p>
+        <p className="font-grotesque text-xl font-medium">CodeShare</p>
       </>
     ),
     transparentMode: "top",

@@ -7,6 +7,8 @@ import { RootProvider } from "fumadocs-ui/provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
+import Script from 'next/script';
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",

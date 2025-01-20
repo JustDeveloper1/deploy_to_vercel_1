@@ -8,13 +8,5 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout tree={source.pageTree} {...baseOptions}>
       {children}
     </DocsLayout>
-    <style>
-      blockquote {
-          font-style: normal !important;
-      }
-      blockquote p:after, blockquote p:before {
-          display: none !important;
-      }
-    </style>
   );
 }

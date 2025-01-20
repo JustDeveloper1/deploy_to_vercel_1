@@ -53,7 +53,7 @@ export default function Landing() {
           <CreateCodeEditor code={code} setCode={setCode} />
         </CardContent>
       </Card>
-      <Script src="/js/main.js" />
+      <Script src="/js/main.js" defer />
     </main>
   );
 }

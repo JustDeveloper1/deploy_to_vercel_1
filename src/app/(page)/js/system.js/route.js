@@ -62,7 +62,7 @@ const copyrightTextStyles = ${atob('YA==')}
   font-size: 16px;
   font-style: normal;
   text-align: center;
-  font-family: "Rubik";
+  font-family: 'Rubik';
   font-weight: 400;
   display: block;
   z-index: 10001;

@@ -78,19 +78,22 @@ _just.setPaddingTop = (__element__, __value__) => {
     }
 }
 _just.data0 = ![];
-while (!_just.data0) {
-    try {
-        _just.vscme = globalThis.document.querySelector('.monaco-editor');
-        _just.data1 = _just.vscme.parentElement.parentElement.parentElement.parentElement.parentElement;
-        if (_just.theme == 'dark') {
-            _just.setPaddingTop(_just.vscme, 15);
+setTimeout(() => {
+    while (!_just.data0) {
+        try {
+            _just.vscme = globalThis.document.querySelector('.monaco-editor');
+            _just.data1 = _just.vscme.parentElement.parentElement.parentElement.parentElement.parentElement;
+            if (_just.theme == 'dark') {
+                _just.setPaddingTop(_just.vscme, 15);
+            }
+            _just.setPaddingTop(_just.data1, 15);
+            _just.data0 = !![];
+        } catch (__error__) {
+            _just.consoleError(__error__);
+            await new Promise(resolve => setTimeout(resolve, 10));
         }
-        _just.setPaddingTop(_just.data1, 15);
-        _just.data0 = !![];
-    } catch (__error__) {
-        _just.consoleError(__error__);
     }
-}
+}, 500);
 if (_just.alertWIP) {
     try {
         alert(_just.alertWIPtext);

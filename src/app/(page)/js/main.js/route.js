@@ -58,27 +58,39 @@ const _just = {};
 _just.alertWIP = true;
 _just.alertWIPtext = 'This website is w.i.p.!';
 _just.useConsole = true;
+_just.consoleText = 'CodeShare error:';
 
 //  SYSTEM  //
 
 _just.theme = globalThis.localStorage.getItem('theme') || 'dark';
-_just.vscme = globalThis.document.querySelector('.monaco-editor');
-_just.data0 = _just.vscme.parentElement.parentElement.parentElement.parentElement.parentElement;
+_just.consoleError = (__text__) => {
+    if (_just.useConsole) {
+        console.warn(${atob('YA==')}${'${_just.consoleText}'} ${'${__text__}'}${atob('YA==')});
+    }
+}
 _just.setPaddingTop = (__element__, __value__) => {
     try {
         __element__.style.paddingTop = ${atob('YA==')}${'${__value__}'}px${atob('YA==')};
-        return true;
+        return !![];
     } catch (__error__) {
-        if (_just.useConsole) {
-            console.warn(__error__);
-        }
-        return false;
+        _just.consoleError(__error__);
+        return ![];
     }
 }
-if (_just.theme == 'dark') {
-    _just.setPaddingTop(_just.vscme, 15);
+_just.data0 = ![];
+while (!_just.data0) {
+    try {
+        _just.vscme = globalThis.document.querySelector('.monaco-editor');
+        _just.data1 = _just.vscme.parentElement.parentElement.parentElement.parentElement.parentElement;
+        if (_just.theme == 'dark') {
+            _just.setPaddingTop(_just.vscme, 15);
+        }
+        _just.setPaddingTop(_just.data1, 15);
+        _just.data0 = !![];
+    } catch (__error__) {
+        _just.consoleError(__error__);
+    }
 }
-_just.setPaddingTop(_just.data0, 15);
 if (_just.alertWIP) {
     try {
         alert(_just.alertWIPtext);

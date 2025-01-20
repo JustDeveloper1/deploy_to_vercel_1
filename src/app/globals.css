@@ -97,3 +97,9 @@
 .__hide, ._hide {
   display: none !important;
 }
+blockquote {
+    font-style: normal !important;
+}
+blockquote p:after, blockquote p:before {
+    display: none !important;
+}

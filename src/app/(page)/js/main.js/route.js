@@ -78,7 +78,7 @@ _just.setPaddingTop = (__element__, __value__) => {
     }
 }
 _just.data0 = ![];
-setTimeout(() => {
+setTimeout(async () => {
     while (!_just.data0) {
         try {
             _just.vscme = globalThis.document.querySelector('.monaco-editor');

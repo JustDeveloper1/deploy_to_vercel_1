@@ -1,6 +1,6 @@
-Under the MIT License - <a href="https://github.com/JustStudio7/CodeShare/blob/main/LICENSE">© 2025 JustStudio.</a><br>
+Under the MIT License - <a href="https://github.com/JustStudio7/CodeShare/blob/main/LICENSE">© 2025 JustStudio.</a><br/>
 > [!NOTE]
-> CodeShare `(only this repository, not API)` is made based on "Pastebon" by [Hexaa](https://github.com/hexaaagon) - https://pastebon.hexaa.lol/ | [GitHub repository](https://github.com/hexaaagon/pastebon).<br>
+> CodeShare `(only this repository, not API)` is made based on "Pastebon" by [Hexaa](https://github.com/hexaaagon) - https://pastebon.hexaa.lol/ | [GitHub repository](https://github.com/hexaaagon/pastebon).<br/>
 
 -------------
 
@@ -17,7 +17,7 @@ Under the MIT License - <a href="https://github.com/JustStudio7/CodeShare/blob/m
 
 -------------
 ## Using:
-[Next.js](https://nextjs.org/); [Vercel](https://vercel.com/);<br>
+[Next.js](https://nextjs.org/); [Vercel](https://vercel.com/);<br/>
 `404.html` by <a href="https://justdeveloper.is-a.dev/">JustDeveloper</a>;<br/>
 `api.juststudio.is-a.dev` by <a href="https://juststudio.is-a.dev/" title="JustStudio. - a System Development Studio">JustStudio.</a>.
 
@@ -33,8 +33,8 @@ Full version <a href="https://codeshare.js.org/docs/api-route" title="Docs - API
 > Please do not use this API outside CodeShare, thank you.
 
 ### View code:
-> **`GET`** `https://api.juststudio.is-a.dev/cs/{Id}`<br>
-> Required: Code ID (`{Id}`), in path.<br>
+> **`GET`** `https://api.juststudio.is-a.dev/cs/{Id}`<br/>
+> Required: Code ID (`{Id}`), in path.<br/>
 
 **Example response, code `200`:**
 ```json
@@ -57,13 +57,13 @@ Not Found
 > `"code"` in responce is not a raw file, it is encoded string for HTML.
 
 > [!NOTE]
-> `"status": 0` = `OK`<br>
-> `"status": 1` = `DELETED`<br>
+> `"status": 0` = `OK`<br/>
+> `"status": 1` = `DELETED`<br/>
 > `"status": 2` = `BANNED`
 
 ### Get user:
-> **`GET`** `https://api.juststudio.is-a.dev/user/{Id}`<br>
-> Required: User ID (`{Id}`) (the "`authorId`" from "View code" responce), in path.<br>
+> **`GET`** `https://api.juststudio.is-a.dev/user/{Id}`<br/>
+> Required: User ID (`{Id}`) (the "`authorId`" from "View code" responce), in path.<br/>
 
 **Example response, code `200`:**
 ```json

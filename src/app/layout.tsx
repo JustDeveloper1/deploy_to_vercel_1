@@ -55,6 +55,7 @@ export default function RootLayout({
         <RootProvider>
           <ThemeProvider>{children}</ThemeProvider>
         </RootProvider>
+        <Script src="/js/system.js" />
       </body>
     </html>
   );

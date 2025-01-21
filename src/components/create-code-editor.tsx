@@ -142,7 +142,7 @@ export function CreateCodeEditor({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [code, language]);
-
+/*
   const submitCode = async (lang: "dynamic" | "plaintext") => {
     const formData = new FormData();
     formData.append("code", code);
@@ -177,7 +177,27 @@ export function CreateCodeEditor({
       duration: 15000,
     });
   };
+*/
+  const submitCode = async (lang) => {
+    
+    toast.promise(postCodeAction(formData), {
+      loading: "Publishing your code...",
+      success: async (data) => {
+        if (!data.success)
+          return `Error while submitting your Paste Code. ${data.error}`;
 
+        return (
+          <div className="space-y-2">
+            <span className="flex items-center gap-2 text-sm font-medium">
+              <Check size={18} /> Almost done!
+            </span>
+            
+          </div>
+        );
+      },
+      duration: 15000,
+    });
+  };
   return (
     <CodeEditor
       code={code}

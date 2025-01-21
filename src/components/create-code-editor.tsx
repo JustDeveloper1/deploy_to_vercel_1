@@ -181,7 +181,9 @@ export function CreateCodeEditor({
   };
 */
   const submitCode = async (lang: string) => {
-    
+    const formData = new FormData();
+    formData.append("code", code);
+    formData.append("language", lang === "dynamic" ? language : lang);
     toast.promise(postCodeAction(formData), {
       loading: "Publishing your code...",
       success: async (data) => {

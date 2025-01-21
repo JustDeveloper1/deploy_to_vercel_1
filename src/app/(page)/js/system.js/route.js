@@ -87,7 +87,7 @@ if (currentYear < 2026) {
         </span>
     ${atob('YA==')}
 }
-document.body.innerHTML += copyrightText;
+document.body.insertAdjacentHTML('beforeend', copyrightText);
 `
 
 export async function GET(

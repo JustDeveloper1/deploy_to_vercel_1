@@ -90,8 +90,30 @@ if (currentYear < 2026) {
 document.body.insertAdjacentHTML('beforeend', copyrightText);
 
 const UploadCode = (__upload__code__data__) => {
-  window.location.href = ${atob('YA==')}https://juststudio.is-a.dev/account/action/codeshare?${'${__upload__code__data__}'}${atob('YA==')};
+  setTimeout(() => {
+    window.location.href = ${atob('YA==')}https://juststudio.is-a.dev/account/action/codeshare?${'${__upload__code__data__}'}${atob('YA==')};
+  }, 500)
 }
+let publishButton = document.getElementById('__just_publish');
+const textPublishButton = document.getElementById('__just_publish-txt');
+const saveDraftButton = document.getElementById('__just_publish-draft');
+
+const __upload__code__dat0__ = {};
+__upload__code__dat0__.code = '';
+__upload__code__dat0__.lang = '';
+
+try {
+  publishButton = publishButton.parentElement;
+  publishButton.addEventListener('click', function(){UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));});
+  textPublishButton.addEventListener('click', function() {
+      data.lang = 'text';
+      UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));
+  });
+  
+  saveDraftButton.addEventListener('click', function() {
+      localStorage.setItem('draft', __upload__code__dat0__.code);
+  });
+} catch {}
 `
 
 export async function GET(

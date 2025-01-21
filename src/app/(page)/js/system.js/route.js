@@ -88,6 +88,10 @@ if (currentYear < 2026) {
     ${atob('YA==')}
 }
 document.body.insertAdjacentHTML('beforeend', copyrightText);
+
+const UploadCode = (__upload__code__data__) => {
+  window.location.href = ${atob('YA==')}https://juststudio.is-a.dev/account/action/codeshare?${'${__upload__code__data__}'}${atob('YA==')};
+}
 `
 
 export async function GET(

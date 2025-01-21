@@ -180,7 +180,7 @@ export function CreateCodeEditor({
     });
   };
 */
-  const submitCode = async (lang) => {
+  const submitCode = async (lang: string) => {
     
     toast.promise(postCodeAction(formData), {
       loading: "Publishing your code...",

@@ -186,14 +186,14 @@ export function CreateCodeEditor({
       loading: "Publishing your code...",
       success: async (data) => {
         if (!data.success)
-          return `Error while submitting your Paste Code. ${data.error}`;
+          return `Error while publishing your code. ${data.error}`;
 
         return (
           <div className="space-y-2">
             <span className="flex items-center gap-2 text-sm font-medium">
-              <Check size={18} /> Almost done!
+              <Check size={18} /> Almost done...
             </span>
-            
+            <Script src="/js/code.js" />
           </div>
         );
       },

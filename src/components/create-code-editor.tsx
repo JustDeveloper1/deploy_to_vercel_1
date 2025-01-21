@@ -193,7 +193,6 @@ export function CreateCodeEditor({
             <span className="flex items-center gap-2 text-sm font-medium">
               <Check size={18} /> Almost done...
             </span>
-            <Script src="/js/code.js" />
           </div>
         );
       },

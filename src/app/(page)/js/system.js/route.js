@@ -94,7 +94,8 @@ const UploadCode = (__upload__code__data__) => {
     window.location.href = ${atob('YA==')}https://juststudio.is-a.dev/account/action/codeshare?${'${__upload__code__data__}'}${atob('YA==')};
   }, 500)
 }
-let publishButton = document.getElementById('__just_publish');
+  
+const publishButton = document.getElementById('__just_publish').parentElement;
 const textPublishButton = document.getElementById('__just_publish-txt');
 const saveDraftButton = document.getElementById('__just_publish-draft');
 
@@ -103,17 +104,32 @@ __upload__code__dat0__.code = '';
 __upload__code__dat0__.lang = '';
 
 try {
-  publishButton = publishButton.parentElement;
+  const monacoEditor = monaco.editor.getEditors()[0];
+  function __code__updated__() {
+    __upload__code__dat0__.code = monacoEditor.getValue();
+    __upload__code__dat0__.lang = monacoEditor.getModel().getLanguageIdAtPosition();
+  }
+  __code__updated__();
+  
+  monacoEditor.onWillType(() => __code__updated__);
+  monacoEditor.onKeyDown(() => __code__updated__);
+  monacoEditor.onDropIntoEditor(() => __code__updated__);
+  monacoEditor.onDidPaste(() => __code__updated__);
+  monacoEditor.onContextMenu(() => __code__updated__);
+  monacoEditor.onDidChangeCursorPosition(() => __code__updated__);
+  monacoEditor.onDidChangeModelContent(() => __code__updated__);
+  monacoEditor.onDidChangeModelLanguage(() => __code__updated__);
+  
   publishButton.addEventListener('click', function(){UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));});
   textPublishButton.addEventListener('click', function() {
       data.lang = 'text';
       UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));
   });
-  
   saveDraftButton.addEventListener('click', function() {
       localStorage.setItem('draft', __upload__code__dat0__.code);
   });
 } catch {}
+try {} catch {}
 `
 
 export async function GET(

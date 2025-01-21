@@ -42,6 +42,8 @@ import {
 import { SplitButton } from "@/components/ui/split-button";
 import { DoneDialog } from "./done-dialog";
 
+import Script from 'next/script';
+
 export function CreateCodeEditor({
   code,
   setCode,

@@ -250,7 +250,7 @@ export function CreateCodeEditor({
                 <SplitButton
                   buttonChildren={
                     <>
-                      <SendHorizonal size={16} className="size-2 sm:size-4" />
+                      <SendHorizonal size={16} className="size-2 sm:size-4" id="__just_publish" />
                       Publish
                     </>
                   }
@@ -258,17 +258,18 @@ export function CreateCodeEditor({
                     <>
                       <DropdownMenuSub>
                         <DropdownMenuSubTrigger>
-                          Submit as ...
+                          Publish as...
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="w-48">
                           <DropdownMenuItem
                             onClick={() => submitCode("dynamic")}
+                            id="__just_publish-txt"
                           >
                             Plain Text
                           </DropdownMenuItem>
                         </DropdownMenuSubContent>
                       </DropdownMenuSub>
-                      <DropdownMenuItem disabled>
+                      <DropdownMenuItem disabled id="__just_publish-draft">
                         Save as Draft
                       </DropdownMenuItem>
                     </>

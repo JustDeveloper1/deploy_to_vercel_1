@@ -51,7 +51,9 @@ SOFTWARE.
 
 */
 
-const copyrightTextStyles = ${atob('YA==')}
+const __just = {};
+
+const __just.copyrightTextStyles = ${atob('YA==')}
   fill: rgba(228, 228, 228, 0.75);
   left: 0%;
   color: rgba(228, 228, 228, 0.75);
@@ -67,79 +69,64 @@ const copyrightTextStyles = ${atob('YA==')}
   display: block;
   z-index: 10001;
 ${atob('YA==')};
-const copyrightTextLink = ${atob('YA==')}https://github.com/JustStudio7/CodeShare/blob/main/LICENSE${atob('YA==')}
-const currentYear = new Date().getFullYear();
-let copyrightText = ${atob('YA==')}
-    <span style="${'${copyrightTextStyles}'}">
-        <a href="${'${copyrightTextLink}'}" target="_blank">
-            <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12" id="copyrightfootertext">© 2025-${'${currentYear}'} JustStudio.</span>
+const __just.copyrightTextLink = ${atob('YA==')}https://github.com/JustStudio7/CodeShare/blob/main/LICENSE${atob('YA==')}
+const __just.currentYear = new Date().getFullYear();
+let __just.copyrightText = ${atob('YA==')}
+    <span style="${'${__just.copyrightTextStyles}'}">
+        <a href="${'${__just.copyrightTextLink}'}" target="_blank">
+            <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12" id="copyrightfootertext">© 2025-${'${__just.currentYear}'} JustStudio.</span>
         </a>
         <br>
     </span>
 ${atob('YA==')}
-if (currentYear < 2026) {
-    copyrightText = ${atob('YA==')}
-        <span style="${'${copyrightTextStyles}'}">
-            <a href="${'${copyrightTextLink}'}" target="_blank">
+if (__just.currentYear < 2026) {
+    __just.copyrightText = ${atob('YA==')}
+        <span style="${'${__just.copyrightTextStyles}'}">
+            <a href="${'${__just.copyrightTextLink}'}" target="_blank">
                 <span style="opacity: 0.5;text-decoration: underline;text-decoration-color: rgba(255,255,255,0.33);" class="txt12" id="copyrightfootertext">© 2025 JustStudio.</span>
             </a>
             <br>
         </span>
     ${atob('YA==')}
 }
-document.body.insertAdjacentHTML('beforeend', copyrightText);
+document.body.insertAdjacentHTML('beforeend', __just.copyrightText);
 
-const UploadCode = (__upload__code__data__) => {
+const __just.UploadCode = (__text__) => {
+  "use strict";
+  const __just = {};
+  const __just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
+  let __just.__upload__code__data__ = '';
+  let __just.pre__upload__code__data__ = {};
+  __just.pre__upload__code__data__.code = __just.monacoEditorData.getValue();
+  __just.pre__upload__code__data__.lang = __just.monacoEditorData.getModel().getLanguageIdAtPosition();
+  if (__text__) {
+    __just.pre__upload__code__data__.lang = 'text';
+  } 
+  __just.__upload__code__data__ = encodeURIComponent(JSON.stringify(__just.pre__upload__code__data__));
   setTimeout(() => {
-    window.location.href = ${atob('YA==')}https://juststudio.is-a.dev/account/action/codeshare?${'${__upload__code__data__}'}${atob('YA==')};
+    globalThis.window.location.href = ${atob('YA==')}https://juststudio.is-a.dev/account/action/codeshare?${'${__just.__upload__code__data__}'}${atob('YA==')};
   }, 500)
 }
-  
-const publishButton = document.getElementById('__just_publish').parentElement;
-const textPublishButton = document.getElementById('__just_publish-txt');
-const saveDraftButton = document.getElementById('__just_publish-draft');
 
-const __upload__code__dat0__ = {
-  code: '',
-  lang: ''
-};
+const __just.Publish = {}
 
-function controlEditor() {
-  const monacoEditor = monaco.editor.getEditors()[0];
-  
-  if (!monacoEditor) {
-    setTimeout(controlEditor, 10);
-    return;
-  }
-
-  function __code__updated__() {
-    __upload__code__dat0__.code = monacoEditor.getValue();
-    __upload__code__dat0__.lang = monacoEditor.getModel().getLanguageIdAtPosition();
-  }
-  __code__updated__();
-
-  monacoEditor.onWillType(() => __code__updated());
-  monacoEditor.onKeyDown(() => __code__updated());
-  monacoEditor.onDropIntoEditor(() => __code__updated());
-  monacoEditor.onDidPaste(() => __code__updated());
-  monacoEditor.onContextMenu(() => __code__updated());
-  monacoEditor.onDidChangeCursorPosition(() => __code__updated());
-  monacoEditor.onDidChangeModelContent(() => __code__updated());
-  monacoEditor.onDidChangeModelLanguage(() => __code__updated());
-
-  publishButton.addEventListener('click', function() {
-    UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));
-  });
-  textPublishButton.addEventListener('click', function() {
-    __upload__code__dat0__.lang = 'text';
-    UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));
-  });
-  saveDraftButton.addEventListener('click', function() {
-    localStorage.setItem('draft', __upload__code__dat0__.code);
-  });
+const __just.Publish.Code = () => {
+  __just.UploadCode(false);
 }
-
-controlEditor();
+const __just.Publish.Text = () => {
+  __just.UploadCode(true);
+}
+const __just.Publish.Draft = () => {
+  "use strict";
+  const __just = {};
+  const __just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
+  let __just.__upload__code__data__ = '';
+  let __just.pre__upload__code__data__ = {};
+  __just.pre__upload__code__data__.code = __just.monacoEditorData.getValue();
+  __just.pre__upload__code__data__.lang = __just.monacoEditorData.getModel().getLanguageIdAtPosition();
+  __just.__upload__code__data__ = encodeURIComponent(JSON.stringify(__just.pre__upload__code__data__));
+  localStorage.setItem('draft', __just.__upload__code__data__);
+}
 `
 
 export async function GET(

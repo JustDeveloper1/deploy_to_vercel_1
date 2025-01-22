@@ -99,37 +99,47 @@ const publishButton = document.getElementById('__just_publish').parentElement;
 const textPublishButton = document.getElementById('__just_publish-txt');
 const saveDraftButton = document.getElementById('__just_publish-draft');
 
-const __upload__code__dat0__ = {};
-__upload__code__dat0__.code = '';
-__upload__code__dat0__.lang = '';
+const __upload__code__dat0__ = {
+  code: '',
+  lang: ''
+};
 
-try {
+function controlEditor() {
   const monacoEditor = monaco.editor.getEditors()[0];
+  
+  if (!monacoEditor) {
+    setTimeout(controlEditor, 10);
+    return;
+  }
+
   function __code__updated__() {
     __upload__code__dat0__.code = monacoEditor.getValue();
     __upload__code__dat0__.lang = monacoEditor.getModel().getLanguageIdAtPosition();
   }
   __code__updated__();
-  
-  monacoEditor.onWillType(() => __code__updated__);
-  monacoEditor.onKeyDown(() => __code__updated__);
-  monacoEditor.onDropIntoEditor(() => __code__updated__);
-  monacoEditor.onDidPaste(() => __code__updated__);
-  monacoEditor.onContextMenu(() => __code__updated__);
-  monacoEditor.onDidChangeCursorPosition(() => __code__updated__);
-  monacoEditor.onDidChangeModelContent(() => __code__updated__);
-  monacoEditor.onDidChangeModelLanguage(() => __code__updated__);
-  
-  publishButton.addEventListener('click', function(){UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));});
+
+  monacoEditor.onWillType(() => __code__updated());
+  monacoEditor.onKeyDown(() => __code__updated());
+  monacoEditor.onDropIntoEditor(() => __code__updated());
+  monacoEditor.onDidPaste(() => __code__updated());
+  monacoEditor.onContextMenu(() => __code__updated());
+  monacoEditor.onDidChangeCursorPosition(() => __code__updated());
+  monacoEditor.onDidChangeModelContent(() => __code__updated());
+  monacoEditor.onDidChangeModelLanguage(() => __code__updated());
+
+  publishButton.addEventListener('click', function() {
+    UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));
+  });
   textPublishButton.addEventListener('click', function() {
-      data.lang = 'text';
-      UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));
+    __upload__code__dat0__.lang = 'text';
+    UploadCode(encodeURIComponent(JSON.stringify(__upload__code__dat0__)));
   });
   saveDraftButton.addEventListener('click', function() {
-      localStorage.setItem('draft', __upload__code__dat0__.code);
+    localStorage.setItem('draft', __upload__code__dat0__.code);
   });
-} catch {}
-try {} catch {}
+}
+
+controlEditor();
 `
 
 export async function GET(

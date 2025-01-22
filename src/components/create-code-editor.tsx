@@ -201,6 +201,49 @@ export function CreateCodeEditor({
       duration: 15000,
     });
   };
+
+  const __just = {};
+
+  const __just.UploadCode = (__text__) => {
+    "use client";
+    "use strict";
+    const __just = {};
+    const __just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
+    let __just.__upload__code__data__ = '';
+    let __just.pre__upload__code__data__ = {};
+    __just.pre__upload__code__data__.code = __just.monacoEditorData.getValue();
+    __just.pre__upload__code__data__.lang = __just.monacoEditorData.getModel().getLanguageIdAtPosition();
+    if (__text__) {
+      __just.pre__upload__code__data__.lang = 'text';
+    } 
+    __just.__upload__code__data__ = encodeURIComponent(JSON.stringify(__just.pre__upload__code__data__));
+    setTimeout(() => {
+      globalThis.window.location.href = 'https://juststudio.is-a.dev/account/action/codeshare?'+__just.__upload__code__data__;
+    }, 500)
+  }
+  
+  const __just.Publish = {}
+
+  const __just.Publish.Code = () => {
+    "use client";
+    __just.UploadCode(false);
+  }
+  const __just.Publish.Text = () => {
+    "use client";
+    __just.UploadCode(true);
+  }
+  const __just.Publish.Draft = () => {
+    "use client";
+    "use strict";
+    const __just = {};
+    const __just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
+    let __just.__upload__code__data__ = '';
+    let __just.pre__upload__code__data__ = {};
+    __just.pre__upload__code__data__.code = __just.monacoEditorData.getValue();
+    __just.pre__upload__code__data__.lang = __just.monacoEditorData.getModel().getLanguageIdAtPosition();
+    __just.__upload__code__data__ = encodeURIComponent(JSON.stringify(__just.pre__upload__code__data__));
+    localStorage.setItem('draft', __just.__upload__code__data__);
+  };
   return (
     <CodeEditor
       code={code}

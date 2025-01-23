@@ -1,6 +1,8 @@
 import { viewCode } from "@/lib/actions/code";
 import fetcher from "@/lib/fetch";
 
+import { useParams } from "next/navigation";
+
 export async function GET(
   request: Request,
   {

@@ -17,7 +17,7 @@ export default function MobileNavbar() {
         <span>
           <Image
             src="/static/images/logo-text-light.png"
-            alt="Pastebon Logo"
+            alt="CodeShare Logo"
             width={90}
             height={23}
             priority
@@ -25,7 +25,7 @@ export default function MobileNavbar() {
           />
           <Image
             src="/static/images/logo-text-dark.png"
-            alt="Pastebon Logo"
+            alt="CodeShare Logo"
             width={90}
             height={23}
             priority

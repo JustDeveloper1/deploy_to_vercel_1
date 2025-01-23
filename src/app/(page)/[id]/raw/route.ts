@@ -2,7 +2,7 @@ import { viewCode } from "@/lib/actions/code";
 import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
-export function GET(
+export async function GET(
   request: Request,
   {
     params,
@@ -10,6 +10,7 @@ export function GET(
     params: Promise<{ id: string }>;
   },
 ) {
+  const resolvedParams = await params;
   const { data, isLoading } = useSWR<
     {
       success: true;
@@ -25,7 +26,7 @@ export function GET(
       };
     },
     { success: false; error: any }
-  >(`https://api.juststudio.is-a.dev/cs/${params}`, fetcher);
+  >(`https://api.juststudio.is-a.dev/cs/${resolvedParams.id}`, fetcher);
 
   if (!(data)) {
     return new Response("Unknown error.", {

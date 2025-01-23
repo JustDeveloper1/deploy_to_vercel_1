@@ -39,7 +39,7 @@ export default function ViewCode() {
       };
     },
     { success: false; error: any }
-  >(`/api/paste/${params.id}/view`, fetcher);
+  >(`https://api.juststudio.is-a.dev/cs/${params.id}`, fetcher);
 
   return (
     <main className="p-8 px-10">

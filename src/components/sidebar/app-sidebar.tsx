@@ -24,7 +24,7 @@ import {
 const data = {
   navMain: [
     {
-      name: "Paste",
+      name: "Code",
       url: "/",
       icon: ScrollText,
     },
@@ -52,7 +52,7 @@ export function AppSidebar({
                 <div className="mx-auto ml-1 flex aspect-square size-6 items-center justify-center rounded-lg text-sidebar-primary-foreground">
                   <Image
                     src="/static/images/logo-light.png"
-                    alt="Pastebon Logo"
+                    alt="CodeShare Logo"
                     width={100}
                     height={100}
                     priority
@@ -60,7 +60,7 @@ export function AppSidebar({
                   />
                   <Image
                     src="/static/images/logo-dark.png"
-                    alt="Pastebon Logo"
+                    alt="CodeShare Logo"
                     width={100}
                     height={100}
                     priority
@@ -68,8 +68,8 @@ export function AppSidebar({
                   />
                 </div>
                 <div className="grid flex-1 text-left text-base leading-tight">
-                  <span className="truncate font-grotesque font-medium">
-                    Pastebon
+                  <span className="truncate font-rubik font-medium">
+                    CodeShare
                   </span>
                 </div>
               </Link>

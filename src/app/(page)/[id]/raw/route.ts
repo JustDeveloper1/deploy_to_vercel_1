@@ -8,7 +8,7 @@ export async function GET(
   {
     params,
   }: {
-    params: { id: string };
+    params: useParams<{ id: string }>();
   },
 ) {
   try {

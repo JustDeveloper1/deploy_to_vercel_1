@@ -1,5 +1,4 @@
 import { viewCode } from "@/lib/actions/code";
-import useSWR from "swr";
 import fetcher from "@/lib/fetch";
 
 export async function GET(
@@ -7,37 +6,29 @@ export async function GET(
   {
     params,
   }: {
-    params: Promise<{ id: string }>;
+    params: { id: string };
   },
 ) {
-  const resolvedParams = await params;
-  const { data, isLoading } = useSWR<
-    {
-      success: true;
-      data: {
-        id: number;
-        authorId: string;
-        code: string;
-        langDone: string;
-        name: string;
-        created: number;
-        updated: number;
-        status: number;
-      };
-    },
-    { success: false; error: any }
-  >(`https://api.juststudio.is-a.dev/cs/${resolvedParams.id}`, fetcher);
+  try {
+    const response = await fetcher(`https://api.juststudio.is-a.dev/cs/${params.id}`);
+    const data = await response.json();
 
-  if (!(data)) {
-    return new Response("Unknown error.", {
+    if (!data) {
+      return new Response("Unknown error.", {
+        status: 500,
+      });
+    }
+    if (!data.success) {
+      return new Response("Code not found.", {
+        status: 404,
+      });
+    }
+    return new Response(data.data.code, {
+      status: 200,
+    });
+  } catch (error) {
+    return new Response("Internal Server Error.", {
       status: 500,
     });
   }
-  if (!data.success)
-    return new Response("Code not found.", {
-      status: 404,
-    });
-  return new Response(data.data.code, {
-    status: 200,
-  });
 }

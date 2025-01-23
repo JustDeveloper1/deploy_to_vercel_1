@@ -24,7 +24,7 @@ SOFTWARE.
 
 */
 
-function getCode(id) {
+async function getCode(id) {
   let __script__ = ``;
   const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`);
   const code = 200;
@@ -52,7 +52,7 @@ export async function GET(
 ) {
   const url = request.url;
   const id = url.slice(25, -4);
-  const [codeData, codeCode] = getCode(id);
+  const [codeData, codeCode] = await getCode(id);
   
   return new Response(codeData, {
     status: codeCode,

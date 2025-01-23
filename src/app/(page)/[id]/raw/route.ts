@@ -8,7 +8,7 @@ export async function GET(
   {
     params,
   }: {
-    params: useParams<{ id: string }>;
+    params: typeof useParams<{ id: string }>;
   },
 ) {
   try {

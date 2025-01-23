@@ -24,12 +24,37 @@ SOFTWARE.
 
 */
 
-const __script__ = ``
+function getCode(id) {
+  let __script__ = ``;
+  const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`);
+  const code = 200;
+  let data;
+  const decodeHtml = (html) => {
+      const txt = new TextDecoder("utf-8").decode(new Uint8Array(html.split('').map(c => c.charCodeAt(0))));
+      return txt.replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&amp;/g, '&')
+                .replace(/&quot;/g, '"')
+                .replace(/&#39;/g, "'");
+  };
+  if (response.status && response.status < 400 && response.status > 199) {
+    data = await response.json();
+    __script__ = decodeHtml(data.data.code);
+  } else {
+    code = response.status || 404;
+  }
+
+  return [__script__, code];
+}
 
 export async function GET(
   request
 ) {
-  return new Response(__script__, {
-    status: 200,
+  const url = request.url;
+  const id = url.slice(25, -4);
+  const [codeData, codeCode] = getCode(id);
+  
+  return new Response(codeData, {
+    status: codeCode,
   });
 }

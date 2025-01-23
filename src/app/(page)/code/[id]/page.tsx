@@ -102,7 +102,7 @@ export default function ViewCode() {
         </CardContent>
       </Card>
       <Script src="/js/system.js" />
-      <Script src="/js/main.js" />
+      <Script src="/js/main.js" defer />
     </main>
   );
 }

@@ -89,7 +89,7 @@ export default function ViewCode() {
               {isLoading ? (
                 <Skeleton className="h-4 w-20" />
               ) : (
-                <p className="text-sm">{relativeTime(data!.data?.created)}</p>
+                <p className="text-sm">{relativeTime(`${data!.data?.created}`)}</p>
               )}
             </span>
           </span>

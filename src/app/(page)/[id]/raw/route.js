@@ -29,13 +29,10 @@ async function getCode(id) {
   const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`);
   const code = 200;
   let data;
-  const decodeHtml = (html) => {
-      const txt = new TextDecoder("utf-8").decode(new Uint8Array(html.split('').map(c => c.charCodeAt(0))));
-      return txt.replace(/&lt;/g, '<')
-                .replace(/&gt;/g, '>')
-                .replace(/&amp;/g, '&')
-                .replace(/&quot;/g, '"')
-                .replace(/&#39;/g, "'");
+  const decodeHtml = (input) => {
+      const textArea = document.createElement('textarea');
+      textArea.innerHTML = input;
+      return textArea.value;
   };
   if (response.status && response.status < 400 && response.status > 199) {
     data = await response.json();

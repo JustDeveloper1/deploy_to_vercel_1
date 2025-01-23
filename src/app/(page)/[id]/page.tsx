@@ -33,11 +33,14 @@ export default function ViewCode() {
     {
       success: true;
       data: {
-        paste: string;
-        language: string;
-        views: number;
-        createdAt: string;
-        expiresAt: string;
+        id: number;
+        authorId: string;
+        code: string;
+        langDone: string;
+        name: string;
+        created: number;
+        updated: number;
+        status: number;
       };
     },
     { success: false; error: any }
@@ -78,7 +81,7 @@ export default function ViewCode() {
               {isLoading ? (
                 <Skeleton className="h-4 w-6" />
               ) : (
-                <p className="text-sm">{data!.data?.views}</p>
+                <p className="text-sm">{data!.data?.id}</p>
               )}
             </span>
             <span className="flex items-center gap-1">
@@ -86,7 +89,7 @@ export default function ViewCode() {
               {isLoading ? (
                 <Skeleton className="h-4 w-20" />
               ) : (
-                <p className="text-sm">{relativeTime(data!.data?.createdAt)}</p>
+                <p className="text-sm">{relativeTime(data!.data?.created)}</p>
               )}
             </span>
           </span>
@@ -96,8 +99,8 @@ export default function ViewCode() {
             <Skeleton className="h-[calc(60vh)] w-full" />
           ) : (
             <ViewCodeEditor
-              language={isLoading ? "plaintext" : data!.data?.language}
-              code={isLoading ? "Loading..." : data!.data?.paste}
+              language={isLoading ? "plaintext" : data!.data?.langDone}
+              code={isLoading ? "Loading..." : data!.data?.code}
               id={params.id}
             />
           )}

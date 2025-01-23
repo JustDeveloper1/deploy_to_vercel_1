@@ -78,6 +78,11 @@ _just.setPaddingTop = (__element__, __value__) => {
     }
 }
 _just.data0 = ![];
+_just.htmlDecode = (input) => {
+    const textArea = document.createElement('textarea');
+    textArea.innerHTML = input;
+    return textArea.value;
+};
 setTimeout(async () => {
     while (!_just.data0) {
         try {
@@ -88,6 +93,11 @@ setTimeout(async () => {
             }
             _just.setPaddingTop(_just.data1, 15);
             _just.data0 = !![];
+
+            if (window.location.pathname !== '/') {
+                _just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
+                _just.monacoEditorData.setValue(_just.htmlDecode(_just.monacoEditorData.getValue()));
+            }
         } catch (__error__) {
             _just.consoleError(__error__);
             await new Promise(resolve => setTimeout(resolve, 10));

@@ -202,48 +202,19 @@ export function CreateCodeEditor({
     });
   };
 
-  const __just = {};
-
-  const __just.UploadCode = (__text__) => {
+  const publishCode = async () => {
     "use client";
-    "use strict";
-    const __just = {};
-    const __just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
-    let __just.__upload__code__data__ = '';
-    let __just.pre__upload__code__data__ = {};
-    __just.pre__upload__code__data__.code = __just.monacoEditorData.getValue();
-    __just.pre__upload__code__data__.lang = __just.monacoEditorData.getModel().getLanguageIdAtPosition();
-    if (__text__) {
-      __just.pre__upload__code__data__.lang = 'text';
-    } 
-    __just.__upload__code__data__ = encodeURIComponent(JSON.stringify(__just.pre__upload__code__data__));
-    setTimeout(() => {
-      globalThis.window.location.href = 'https://juststudio.is-a.dev/account/action/codeshare?'+__just.__upload__code__data__;
-    }, 500)
-  }
-  
-  const __just.Publish = {}
-
-  const __just.Publish.Code = () => {
-    "use client";
-    __just.UploadCode(false);
-  }
-  const __just.Publish.Text = () => {
-    "use client";
-    __just.UploadCode(true);
-  }
-  const __just.Publish.Draft = () => {
-    "use client";
-    "use strict";
-    const __just = {};
-    const __just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
-    let __just.__upload__code__data__ = '';
-    let __just.pre__upload__code__data__ = {};
-    __just.pre__upload__code__data__.code = __just.monacoEditorData.getValue();
-    __just.pre__upload__code__data__.lang = __just.monacoEditorData.getModel().getLanguageIdAtPosition();
-    __just.__upload__code__data__ = encodeURIComponent(JSON.stringify(__just.pre__upload__code__data__));
-    localStorage.setItem('draft', __just.__upload__code__data__);
+    eval('__just.Publish.Code()');
   };
+  const publishText = async () => {
+    "use client";
+    eval('__just.Publish.Text()');
+  };
+  const saveAsDraft = async () => {
+    "use client";
+    eval('__just.Publish.Draft()');
+  };
+  
   return (
     <CodeEditor
       code={code}
@@ -296,7 +267,7 @@ export function CreateCodeEditor({
                   buttonChildren={
                     <>
                       <SendHorizonal size={16} className="size-2 sm:size-4" />
-                      <div id="__just_publish" onClick={() => {__just.Publish.Code()}}>Publish</div>
+                      <div id="__just_publish" onClick={() => {publishCode()}}>Publish</div>
                     </>
                   }
                   dropdownChildren={
@@ -307,14 +278,14 @@ export function CreateCodeEditor({
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="w-48">
                           <DropdownMenuItem
-                            onClick={() => {submitCode("dynamic"); __just.Publish.Text()}}
+                            onClick={() => {submitCode("dynamic"); publishText()}}
                             id="__just_publish-txt"
                           >
                             Plain Text
                           </DropdownMenuItem>
                         </DropdownMenuSubContent>
                       </DropdownMenuSub>
-                      <DropdownMenuItem disabled id="__just_publish-draft" onClick={() => {__just.Publish.Draft()}}>
+                      <DropdownMenuItem disabled id="__just_publish-draft" onClick={() => {saveAsDraft()}}>
                         Save as Draft
                       </DropdownMenuItem>
                     </>

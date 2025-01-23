@@ -8,7 +8,7 @@ export async function GET(
   {
     params,
   }: {
-    params: typeof useParams<{ id: string }>;
+    params: Promise<useParams<{ id: string }>>;
   },
 ) {
   try {

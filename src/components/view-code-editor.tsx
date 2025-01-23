@@ -94,7 +94,7 @@ export function ViewCodeEditor({
             ) : (
               <>
                 <Button asChild>
-                  <Link href={`https://api.juststudio.is-a.dev/cs/${id}`}>
+                  <Link href={`/${id}/raw`}>
                     <ScrollText size={16} className="size-2 sm:size-4" />
                     View Raw
                   </Link>

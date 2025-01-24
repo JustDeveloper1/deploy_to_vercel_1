@@ -36,7 +36,8 @@ export default function ViewCode() {
         id: number;
         authorId: string;
         code: string;
-        langDone: string;
+        langDone?: string;
+        lang?: string;
         name: string;
         created: number;
         updated: number;

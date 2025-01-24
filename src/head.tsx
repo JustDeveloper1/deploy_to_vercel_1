@@ -1,6 +1,6 @@
 import { GoogleTag } from "@/config/head/gtag";
 
-function headInnerHTML() {
+function HeadInnerHTML() {
   return (
     <>
       <GoogleTag />
@@ -8,4 +8,4 @@ function headInnerHTML() {
   )
 }
 
-export { headInnerHTML }
+export { HeadInnerHTML }

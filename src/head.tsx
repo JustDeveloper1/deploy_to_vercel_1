@@ -1,4 +1,9 @@
 import { GoogleTag } from "@/config/head/gtag";
-return (
-  <GoogleTag />
-)
+
+function headInnerHTML() {
+  return (
+    <GoogleTag />
+  )
+}
+
+export { headInnerHTML }

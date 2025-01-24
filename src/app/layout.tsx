@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
 import Script from 'next/script';
-import { headInnerHTML } from "@/head";
+import { HeadInnerHTML } from "@/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <headInnerHTML />
+        <HeadInnerHTML />
       </head>
       <body
         className={cn(

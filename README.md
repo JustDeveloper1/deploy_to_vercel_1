@@ -16,23 +16,23 @@ Under the MIT License - <a href="https://github.com/JustStudio7/CodeShare/blob/m
 </a>
 
 -------------
-## Using:
+## Using
 [Next.js](https://nextjs.org/); [Vercel](https://vercel.com/);<br/>
 `404.html` by <a href="https://justdeveloper.is-a.dev/">JustDeveloper</a>;<br/>
 `api.juststudio.is-a.dev` by <a href="https://juststudio.is-a.dev/" title="JustStudio. - a System Development Studio">JustStudio.</a>.
 
 -------------
-## Special thanks to:
+## Special thanks to
 <a href="https://js.org/" title="JS.ORG - the JavaScript organization">JS.ORG</a> for "codeshare.js.org" subdomain.
 
 -------------
-# API docs:
+# API docs
 Full version <a href="https://codeshare.js.org/docs/api-route" title="Docs - API Routes | CodeShare">**here**</a>.
 
 > [!WARNING]
 > Please do not use this API outside CodeShare, thank you.
 
-### View code:
+### View code
 > **`GET`** `https://api.juststudio.is-a.dev/cs/{Id}`<br/>
 > Required: Code ID (`{Id}`), in path.<br/>
 
@@ -61,7 +61,7 @@ Not Found
 > `"status": 1` = `DELETED`<br/>
 > `"status": 2` = `BANNED`
 
-### Get user:
+### Get user
 > **`GET`** `https://api.juststudio.is-a.dev/user/{Id}`<br/>
 > Required: User ID (`{Id}`) (the "`authorId`" from "View code" responce), in path.<br/>
 

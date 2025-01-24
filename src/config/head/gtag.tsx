@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 function GoogleTag() {
   return(
     {/* Google tag (gtag.js) */}

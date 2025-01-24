@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 
 import Script from 'next/script';
+import { headInnerHTML } from "@/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -46,11 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google tag (gtag.js) */}
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-CRFMGJ9Y7D" />
-        <Script> 
-          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CRFMGJ9Y7D');`}
-        </Script>
+        <headInnerHTML />
       </head>
       <body
         className={cn(

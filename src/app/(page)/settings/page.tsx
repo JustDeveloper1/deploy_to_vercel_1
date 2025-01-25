@@ -149,7 +149,8 @@ export default function SettingsPage() {
             className="h-fit w-fit"
           >
             <div className="flex flex-col">
-              <div className="items-center rounded-md border-2 border-muted bg-popover p-1 hover:bg-accent hover:text-accent-foreground">
+              <div className="items-center rounded-md border-2 border-muted bg-popover p-1 hover:bg-accent hover:text-accent-foreground _just_style5">
+                <div class="_just_style4 _just_style6"></div>
                 <div className="space-y-2 rounded-sm bg-neutral-950 p-2">
                   <div className="space-y-2 rounded-md bg-neutral-800 p-2 shadow-sm">
                     <div className="h-2 w-[80px] animate-pulse rounded-lg bg-neutral-400" />

@@ -16,6 +16,8 @@ import React, {
 
 import { Skeleton } from "@/components/ui/skeleton";
 
+import "@/app/globals.css";
+
 export function CodeEditor({
   code,
   setCode,

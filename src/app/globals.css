@@ -356,22 +356,21 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
 }
 
 ._just_style0 {
-  box-shadow: 
-    0px 0px 15px 2px #6e3bf370, 
-    inset 0px 0px 15px 2px #551aefb5; 
-  border-color: #6e3bf3; 
-  overflow: hidden;
+    box-shadow: 0 0 15px 2px #6e3bf370,inset 0 0 15px 2px #551aefb5;
+    border-color: #6e3bf3;
+    overflow: hidden
 }
 ._just_style1 {
-  box-shadow: 
-    0px 0px 5px 0px white, 
-    -20px -19px 40px 0px #ffffff9e;
+    box-shadow: 0 0 5px 0 #fff,-20px -19px 40px 0 #ffffff9e
 }
 ._just_style2 {
-  box-shadow: 0px 0px 40px 0px #6e3bf3;
+    box-shadow: 0 0 40px 0 #6e3bf3;
+    overflow: hidden;
+    display: flex;
+    position: relative;
 }
 ._just_style3 {
-  box-shadow: 20px 11px 40px 0px black;
+    box-shadow: 20px 11px 40px 0 #000
 }
 ._just_style4 {
     width: 50%;
@@ -391,4 +390,20 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
 }
 ._just_style2 *{
     z-index: 1;
+}
+._just_style5 {
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+._just_style6 {
+    z-index: 1 !important;
+    left: 90%;
+    scale: 3;
+    top: 112%;
+    transform: skewY(214deg);
+    -webkit-transform: skewY(214deg);
+    background-color: transparent;
+    backdrop-filter: invert(100%);
+    -webkit-backdrop-filter: invert(100%);
 }

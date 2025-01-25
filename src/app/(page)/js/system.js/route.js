@@ -53,6 +53,13 @@ SOFTWARE.
 
 const __just = {};
 
+// SETTINGS //
+
+__just.hostname = 'codeshare.js.org';
+__just.copyrightTextLink = ${atob('YA==')}https://github.com/JustStudio7/CodeShare/blob/main/LICENSE${atob('YA==')};
+
+//  SYSTEM  //
+
 __just.copyrightTextStyles = ${atob('YA==')}
   fill: rgba(228, 228, 228, 0.75);
   left: 0%;
@@ -69,7 +76,6 @@ __just.copyrightTextStyles = ${atob('YA==')}
   display: block;
   z-index: 10001;
 ${atob('YA==')};
-__just.copyrightTextLink = ${atob('YA==')}https://github.com/JustStudio7/CodeShare/blob/main/LICENSE${atob('YA==')}
 __just.currentYear = new Date().getFullYear();
 __just.copyrightText = ${atob('YA==')}
     <span style="${'${__just.copyrightTextStyles}'}">
@@ -229,6 +235,10 @@ window.addEventListener('online', function() {
 });
 
 try{document.getElementById('bannerText').parentElement.style['z-index'] = '0';}catch{}
+
+if (window.location.hostname != __just.hostname) {
+    window.location.hostname = __just.hostname;
+}
 `
 
 export async function GET(

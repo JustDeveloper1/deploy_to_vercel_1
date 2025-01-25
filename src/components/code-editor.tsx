@@ -54,7 +54,7 @@ export function CodeEditor({
 
   return (
     <div className="space-y-4">
-      <div className="max-h-screen overflow-hidden rounded-xl">
+      <div className="max-h-screen overflow-hidden rounded-xl _just_monacoEditorParentParent">
         <MonacoCodeEditor
           className="h-[calc(60vh)] max-w-full font-mono"
           language={language}

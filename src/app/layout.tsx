@@ -58,7 +58,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Banner variant="rainbow">This service is W.I.P.</Banner>;
-        <RootProvider>
+        <RootProvider id="content">
           <ThemeProvider>{children}</ThemeProvider>
           <Script src="/js/system.js" />
         </RootProvider>

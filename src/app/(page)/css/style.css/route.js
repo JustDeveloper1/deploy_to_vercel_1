@@ -59,6 +59,14 @@ SOFTWARE.
   color: white;
   background: #6e3bf3;
 }
+
+#notifications {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
 `
 
 export async function GET(

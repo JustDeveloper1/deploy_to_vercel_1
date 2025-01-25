@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 import Script from 'next/script';
 import { HeadInnerHTML } from "@/head";
+import { Banner } from 'fumadocs-ui/components/banner';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -56,10 +57,12 @@ export default function RootLayout({
         )}
         suppressHydrationWarning
       >
+        <Banner variant="rainbow">This service is W.I.P.</Banner>;
         <RootProvider>
           <ThemeProvider>{children}</ThemeProvider>
           <Script src="/js/system.js" />
         </RootProvider>
+        <div id="notifications"></div>
       </body>
     </html>
   );

@@ -94,7 +94,7 @@ export function ViewCodeEditor({
             ) : (
               <>
                 <Button asChild>
-                  <Link href={`/${id}/raw`}>
+                  <Link href={`/${id}/raw`} className="_just_monacoEditorButtons">
                     <ScrollText size={16} className="size-2 sm:size-4" />
                     View Raw
                   </Link>
@@ -103,7 +103,7 @@ export function ViewCodeEditor({
                   onClick={async () => {
                     toast.info("Coming soon :')");
                   }}
-                  className="flex items-center gap-1"
+                  className="flex items-center gap-1 _just_monacoEditorButtons"
                 >
                   <Pencil size={16} className="size-2 sm:size-4" />
                   Edit

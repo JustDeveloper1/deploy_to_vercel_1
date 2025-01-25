@@ -373,3 +373,22 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
 ._just_style3 {
   box-shadow: 20px 11px 40px 0px black;
 }
+._just_style4 {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(38 38 38/var(--tw-bg-opacity,1));
+    position: absolute;
+    rotate: -50deg;
+    top: 54%;
+    left: 50%;
+    z-index: 0 !important;
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    scale: 2;
+    transform: skewY(214deg);
+    -webkit-transform: skewY(214deg);
+}
+._just_style2 *{
+    z-index: 1;
+}

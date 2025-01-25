@@ -124,6 +124,7 @@ _just.checkWindowLocationPathname = () => {
         document.body.classList.add('this_is_settings');
     } 
 };
+_just.checkWindowLocationPathname();
 navigation.addEventListener('navigate', () => {
   _just.checkWindowLocationPathname();
 });

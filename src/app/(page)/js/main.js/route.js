@@ -114,15 +114,17 @@ if (_just.alertWIP) {
     }
 }
 _just.checkWindowLocationPathname = () => {
-    try {
-        document.body.classList.remove('this_is_homepage');
-        document.body.classList.remove('this_is_settings');
-    } catch {}
-    if (window.location.pathname == '/') {
-        document.body.classList.add('this_is_homepage');
-    } else if (window.location.pathname == '/settings' || window.location.pathname == '/settings/') {
-        document.body.classList.add('this_is_settings');
-    } 
+    setTimeout(() => {
+        try {
+            document.body.classList.remove('this_is_homepage');
+            document.body.classList.remove('this_is_settings');
+        } catch {}
+        if (window.location.pathname == '/') {
+            document.body.classList.add('this_is_homepage');
+        } else if (window.location.pathname == '/settings' || window.location.pathname == '/settings/') {
+            document.body.classList.add('this_is_settings');
+        } 
+    }, 10);
 };
 _just.checkWindowLocationPathname();
 navigation.addEventListener('navigate', () => {

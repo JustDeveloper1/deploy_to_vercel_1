@@ -229,7 +229,7 @@ export function CreateCodeEditor({
             <Skeleton className="h-8 w-44" />
           ) : (
             <Select value={language} onValueChange={setLanguage}>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-[180px] _just_monacoEditorButtons">
                 <SelectValue placeholder="Language" />
               </SelectTrigger>
               <SelectContent>
@@ -257,7 +257,7 @@ export function CreateCodeEditor({
               <>
                 <Button
                   onClick={() => formatCode()}
-                  className="flex items-center gap-2"
+                  className="flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed"
                   disabled={formatLoading}
                 >
                   <Sparkles size={16} className="size-2 sm:size-4" />
@@ -291,7 +291,7 @@ export function CreateCodeEditor({
                     </>
                   }
                   className={{
-                    button: "flex items-center gap-2",
+                    button: "flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed",
                   }}
                   disabled={formatLoading || code === ""}
                   options={{

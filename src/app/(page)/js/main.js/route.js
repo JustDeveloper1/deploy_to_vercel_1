@@ -113,6 +113,9 @@ if (_just.alertWIP) {
         }
     }
 }
+if (window.location.pathname == '/') {
+    document.body.classList.add('this_is_homepage');
+}
 `
 
 export async function GET(

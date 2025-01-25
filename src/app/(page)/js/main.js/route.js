@@ -55,9 +55,9 @@ const _just = {};
 
 // SETTINGS //
 
-_just.alertWIP = true;
+_just.alertWIP = false;
 _just.alertWIPtext = 'This website is w.i.p.!';
-_just.useConsole = true;
+_just.useConsole = false;
 _just.consoleText = 'CodeShare error:';
 
 //  SYSTEM  //

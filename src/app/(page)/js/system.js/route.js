@@ -227,6 +227,8 @@ window.addEventListener('offline', function() {
 window.addEventListener('online', function() {
     r_notific(n_connection, true);
 });
+
+document.getElementById('qawsfasfasfaffsdf').parentElement.style['z-index'] = '0';
 `
 
 export async function GET(

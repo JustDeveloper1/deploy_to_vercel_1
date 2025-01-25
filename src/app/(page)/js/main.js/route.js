@@ -65,7 +65,7 @@ _just.consoleText = 'CodeShare error:';
 _just.theme = globalThis.localStorage.getItem('theme') || 'dark';
 _just.darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 if (_just.theme == 'system') {
-    if (darkThemeMq.matches) {
+    if (_just.darkThemeMq.matches) {
         _just.theme = 'dark';
     } else {
         _just.theme = 'light';

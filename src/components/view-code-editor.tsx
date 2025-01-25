@@ -67,7 +67,7 @@ export function ViewCodeEditor({
               value={language || props.language}
               onValueChange={setLanguage}
             >
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-[180px] _just_monacoEditorButtons">
                 <SelectValue placeholder="Language" />
               </SelectTrigger>
               <SelectContent>
@@ -77,7 +77,7 @@ export function ViewCodeEditor({
                   return (
                     <SelectItem key={lang[1]} value={lang[1]}>
                       <span className="flex items-center gap-2 truncate text-sm">
-                        <span className="scale-75">{langIcon}</span> {lang[0]}
+                        <span className="scale-75 noHighlightEffect">{langIcon}</span> {lang[0]}
                       </span>
                     </SelectItem>
                   );
@@ -94,7 +94,7 @@ export function ViewCodeEditor({
             ) : (
               <>
                 <Button asChild>
-                  <Link href={`/${id}/raw`} className="_just_monacoEditorButtons">
+                  <Link href={`/${id}/raw`} className="_just_monacoEditorButtons disabled:cursor-not-allowed">
                     <ScrollText size={16} className="size-2 sm:size-4" />
                     View Raw
                   </Link>
@@ -103,7 +103,7 @@ export function ViewCodeEditor({
                   onClick={async () => {
                     toast.info("Coming soon :')");
                   }}
-                  className="flex items-center gap-1 _just_monacoEditorButtons"
+                  className="flex items-center gap-1 _just_monacoEditorButtons disabled:cursor-not-allowed"
                 >
                   <Pencil size={16} className="size-2 sm:size-4" />
                   Edit

@@ -296,3 +296,6 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
 .monaco-editor {
     z-index: 2;
 }
+.this_is_homepage #content > div > main > main > div > div.flex.flex-col.space-y-1\.5.p-6 {
+    padding-bottom: 0;
+}

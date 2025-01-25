@@ -116,6 +116,7 @@ blockquote p:after, blockquote p:before {
   bottom: 30px;
   left: 50%;
   translate: -50% 0%;
+  -webkit-translate: -50% 0%;
   width: 600px;
   height: auto;
   background-color: white;
@@ -166,13 +167,20 @@ blockquote p:after, blockquote p:before {
   padding-bottom: 20px;
   z-index: -1;
   cursor: pointer;
+  -webkit-cursor: pointer;
   translate: 0% -30%;
+  -webkit-translate: 0% -30%;
   transition: 500ms;
   font-weight: 500;
   text-decoration: underline;
   text-decoration-color: rgba(0,0,0,0.15);
 }
 @property --gradient-angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@-webkit-property --gradient-angle{
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
@@ -236,6 +244,14 @@ blockquote p:after, blockquote p:before {
     --gradient-angle: 360deg;
   }
 }
+@-webkit-keyframes spin-gradient{
+  from{
+    --gradient-angle: 0deg;
+  }
+  to{
+    --gradient-angle: 360deg;
+  }
+}
 .notification a {
   text-decoration: underline;
   text-decoration-color: rgba(0, 0, 0, 0.25);
@@ -281,6 +297,7 @@ blockquote p:after, blockquote p:before {
     bottom: 100%;
     right: 50%;
     filter: blur(209px);
+    -webkit-filter: blur(209px);
     opacity: 0.33;
 }
 

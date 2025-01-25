@@ -239,7 +239,7 @@ export function CreateCodeEditor({
                   return (
                     <SelectItem key={lang[1]} value={lang[1]}>
                       <span className="flex items-center gap-2 truncate text-sm">
-                        <span className="scale-75">{langIcon}</span> {lang[0]}
+                        <span className="scale-75 noHighlightEffect">{langIcon}</span> {lang[0]}
                       </span>
                     </SelectItem>
                   );

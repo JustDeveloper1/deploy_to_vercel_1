@@ -228,7 +228,7 @@ window.addEventListener('online', function() {
     r_notific(n_connection, true);
 });
 
-document.getElementById('qawsfasfasfaffsdf').parentElement.style['z-index'] = '0';
+try{document.getElementById('bannerText').parentElement.style['z-index'] = '0';}catch{}
 `
 
 export async function GET(

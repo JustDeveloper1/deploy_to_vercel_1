@@ -62,9 +62,9 @@ __just.copyrightTextLink = ${atob('YA==')}https://github.com/JustStudio7/CodeSha
 
 __just.copyrightTextStyles = ${atob('YA==')}
   fill: rgba(228, 228, 228, 0.75);
-  left: 0%;
+  left: 25%;
   color: rgba(228, 228, 228, 0.75);
-  width: 100%;
+  width: 50%;
   bottom: 5px;
   height: auto;
   position: fixed;
@@ -74,7 +74,7 @@ __just.copyrightTextStyles = ${atob('YA==')}
   font-family: 'Rubik';
   font-weight: 400;
   display: block;
-  z-index: 10001;
+  z-index: 9;
 ${atob('YA==')};
 __just.currentYear = new Date().getFullYear();
 __just.copyrightText = ${atob('YA==')}

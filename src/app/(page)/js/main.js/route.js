@@ -63,6 +63,14 @@ _just.consoleText = 'CodeShare error:';
 //  SYSTEM  //
 
 _just.theme = globalThis.localStorage.getItem('theme') || 'dark';
+_just.darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+if (_just.theme == 'system') {
+    if (darkThemeMq.matches) {
+        _just.theme = 'dark';
+    } else {
+        _just.theme = 'light';
+    }
+}
 _just.consoleError = (__text__) => {
     if (_just.useConsole) {
         console.warn(${atob('YA==')}${'${_just.consoleText}'} ${'${__text__}'}${atob('YA==')});

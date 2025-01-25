@@ -113,9 +113,20 @@ if (_just.alertWIP) {
         }
     }
 }
-if (window.location.pathname == '/') {
-    document.body.classList.add('this_is_homepage');
-}
+_just.checkWindowLocationPathname = () => {
+    try {
+        document.body.classList.remove('this_is_homepage');
+        document.body.classList.remove('this_is_settings');
+    } catch {}
+    if (window.location.pathname == '/') {
+        document.body.classList.add('this_is_homepage');
+    } else if (window.location.pathname == '/settings' || window.location.pathname == '/settings/') {
+        document.body.classList.add('this_is_settings');
+    } 
+};
+navigation.addEventListener('navigate', () => {
+  _just.checkWindowLocationPathname();
+});
 `
 
 export async function GET(

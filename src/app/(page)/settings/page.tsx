@@ -120,9 +120,9 @@ export default function SettingsPage() {
             id="_just_effects_enable"
           >
             <div className="flex flex-col">
-              <div className="items-center rounded-md border-2 border-muted p-1 hover:border-accent">
-                <div className="space-y-2 rounded-sm bg-[#ecedef] p-2">
-                  <div className="space-y-2 rounded-md bg-white p-2 shadow-sm">
+              <div className="items-center rounded-md border-2 border-muted p-1 hover:border-accent" style="box-shadow: 0px 0px 15px 2px #6e3bf370, inset 0px 0px 15px 2px #551aefb5; border-color: #6e3bf3;">
+                <div className="space-y-2 rounded-sm bg-[#6e3bf3] p-2">
+                  <div className="space-y-2 rounded-md bg-white p-2 shadow-sm" style="box-shadow: 0px 0px 5px 0px white;">
                     <div className="h-2 w-[80px] animate-pulse rounded-lg bg-[#ecedef]" />
                     <div className="h-2 w-[100px] animate-pulse rounded-lg bg-[#ecedef]" />
                   </div>

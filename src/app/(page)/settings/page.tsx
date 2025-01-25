@@ -120,19 +120,19 @@ export default function SettingsPage() {
             id="_just_effects_enable"
           >
             <div className="flex flex-col">
-              <div className="items-center rounded-md border-2 border-muted p-1 hover:border-accent" style="box-shadow: 0px 0px 15px 2px #6e3bf370, inset 0px 0px 15px 2px #551aefb5; border-color: #6e3bf3; overflow: hidden;">
+              <div className="items-center rounded-md border-2 border-muted p-1 hover:border-accent _just_style0">
                 <div className="space-y-2 rounded-sm bg-[#6e3bf3] p-2">
-                  <div className="space-y-2 rounded-md bg-white p-2 shadow-sm" style="box-shadow: 0px 0px 5px 0px white, -20px -19px 40px 0px #ffffff9e;">
+                  <div className="space-y-2 rounded-md bg-white p-2 shadow-sm _just_style1">
                     <div className="h-2 w-[80px] animate-pulse rounded-lg bg-[#ecedef]" />
                     <div className="h-2 w-[100px] animate-pulse rounded-lg bg-[#ecedef]" />
                   </div>
-                  <div className="flex items-center space-x-2 rounded-md bg-white p-2 shadow-sm" style="box-shadow: 0px 0px 40px 0px #6e3bf3;">
+                  <div className="flex items-center space-x-2 rounded-md bg-white p-2 shadow-sm _just_style2">
                     <div className="h-4 w-4 animate-pulse rounded-full bg-[#ecedef]" />
                     <div className="h-2 w-[100px] animate-pulse rounded-lg bg-[#ecedef]" />
                   </div>
-                  <div className="flex items-center space-x-2 rounded-md bg-white p-2 shadow-sm" style="box-shadow: 20px 11px 40px 0px black;">
-                    <div className="h-4 w-4 animate-pulse rounded-full bg-[#ecedef]" />
-                    <div className="h-2 w-[100px] animate-pulse rounded-lg bg-[#ecedef]" />
+                  <div className="flex items-center space-x-2 rounded-md bg-neutral-800 p-2 shadow-sm _just_style3">
+                    <div className="h-4 w-4 animate-pulse rounded-full bg-neutral-400" />
+                    <div className="h-2 w-[100px] animate-pulse rounded-lg bg-neutral-400" />
                   </div>
                 </div>
               </div>

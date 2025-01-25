@@ -271,3 +271,15 @@ blockquote p:after, blockquote p:before {
   color: white;
   background: #6e3bf3;
 }
+
+.shadow-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #6e3bf3;
+    z-index: 1;
+    bottom: 100%;
+    right: 50%;
+    filter: blur(209px);
+    opacity: 0.33;
+}

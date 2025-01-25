@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     default: "CodeShare",
     template: "%s | CodeShare",
   },
-  description: "by JustStudio.",
+  description: "CodeShare is the best tool for storing and sharing codes and text, aka paste tool.",
 };
 
 export default function RootLayout({

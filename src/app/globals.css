@@ -145,6 +145,8 @@ blockquote p:after, blockquote p:before {
   animation-direction: normal;
   animation-iteration-count: 1;
   animation-delay: 0s;
+
+  color: black;
 }
 .notification img, .notification svg {
   width: 20px;

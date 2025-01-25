@@ -57,7 +57,7 @@ export default function RootLayout({
         )}
         suppressHydrationWarning
       >
-        <Banner variant="rainbow">This service is W.I.P.</Banner>;
+        <Banner variant="rainbow" style="z-index: 0;" changeLayout={false}>This service is W.I.P.</Banner>;
         <RootProvider>
           <div id="content">
             <ThemeProvider>{children}</ThemeProvider>

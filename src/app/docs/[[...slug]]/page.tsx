@@ -37,12 +37,18 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
+  const default_description_ = 'CodeShare is the best tool for storing and sharing codes and text, aka paste tool.';
+  let _description_ = page.data.description || default_description_;
+  if (_description_ !== default_description_) {
+    _description_ += ` | ${default_description_}`;
+  }
+  
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
   return {
     title: page.data.title,
-    description: page.data.description,
+    description: _description_,
   };
 }

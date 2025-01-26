@@ -243,13 +243,23 @@ if (window.location.hostname != __just.hostname) {
     window.location.hostname = __just.hostname;
 }
 
-document.querySelectorAll(${atob('YA==')}[${'${__just.styleBorderID}'}], [${'${__just.styleParentBorderID}'}]${atob('YA==')}).forEach(__just__targetElement_ => {
-  if (__just__targetElement_.id === __just.styleBorderID) {
-    __just__targetElement_.style.borderRadius = __just.styleBorderData_AND_styleParentBorderData;
-  } else if (__just__targetElement_.id === __just.styleParentBorderID) {
-    __just__targetElement_.parentElement.style.borderRadius = __just.styleBorderData_AND_styleParentBorderData;
-  }
-})
+__just.intervalData = [];
+__just.intervalData[0] = {};
+__just.intervalData[0].Timeout = 100;
+__just.intervalData[0].Count = 0;
+setInterval(() => {
+    __just.intervalData[0].Count++;
+    if (__just.intervalData[0].Count > 14) {
+        __just.intervalData[0].Timeout = 1000;
+    }
+    document.querySelectorAll(`#${__just.styleBorderID}, #${__just.styleParentBorderID}`).forEach(__just__targetElement_ => {
+      if (__just__targetElement_.id === __just.styleBorderID) {
+        __just__targetElement_.style.borderRadius = __just.styleBorderData_AND_styleParentBorderData;
+      } else if (__just__targetElement_.id === __just.styleParentBorderID) {
+        __just__targetElement_.parentElement.style.borderRadius = __just.styleBorderData_AND_styleParentBorderData;
+      }
+    })
+}, __just.intervalData[0].Timeout);
 `
 
 export async function GET(

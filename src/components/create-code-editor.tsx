@@ -293,7 +293,7 @@ export function CreateCodeEditor({
                   }
                   className={{
                     button: "flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed notification",
-                    dropdown: "_just_monacoEditorButtons",
+                    main: "_just_monacoEditorButtons",
                   }}
                   disabled={formatLoading || code === ""}
                   options={{

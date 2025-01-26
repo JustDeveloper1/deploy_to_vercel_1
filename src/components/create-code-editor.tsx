@@ -258,7 +258,7 @@ export function CreateCodeEditor({
                 <Button
                   onClick={() => formatCode()}
                   className="flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed notification"
-                  style="border-radius: calc(var(--radius) - 2px) !important;"
+                  id="_just_style_border"
                   disabled={formatLoading}
                 >
                   <Sparkles size={16} className="size-2 sm:size-4" />
@@ -268,7 +268,7 @@ export function CreateCodeEditor({
                   buttonChildren={
                     <>
                       <SendHorizonal size={16} className="size-2 sm:size-4" />
-                      <div id="__just_publish" onClick={() => {publishCode()}}>Publish</div>
+                      <div id="__just_publish _just_styleParent_border" onClick={() => {publishCode()}}>Publish</div>
                     </>
                   }
                   dropdownChildren={
@@ -293,9 +293,6 @@ export function CreateCodeEditor({
                   }
                   className={{
                     button: "flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed notification",
-                  }}
-                  style={{
-                    button: "border-radius: calc(var(--radius) - 2px) !important;",
                   }}
                   disabled={formatLoading || code === ""}
                   options={{

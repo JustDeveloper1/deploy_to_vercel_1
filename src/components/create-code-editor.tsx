@@ -257,7 +257,8 @@ export function CreateCodeEditor({
               <>
                 <Button
                   onClick={() => formatCode()}
-                  className="flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed"
+                  className="flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed notification"
+                  style="border-radius: calc(var(--radius) - 2px) !important;"
                   disabled={formatLoading}
                 >
                   <Sparkles size={16} className="size-2 sm:size-4" />
@@ -291,7 +292,10 @@ export function CreateCodeEditor({
                     </>
                   }
                   className={{
-                    button: "flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed",
+                    button: "flex items-center gap-2 _just_monacoEditorButtons disabled:cursor-not-allowed notification",
+                  }}
+                  style={{
+                    button: "border-radius: calc(var(--radius) - 2px) !important;",
                   }}
                   disabled={formatLoading || code === ""}
                   options={{

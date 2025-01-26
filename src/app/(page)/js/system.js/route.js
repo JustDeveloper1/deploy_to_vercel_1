@@ -57,6 +57,9 @@ const __just = {};
 
 __just.hostname = 'codeshare.js.org';
 __just.copyrightTextLink = ${atob('YA==')}https://github.com/JustStudio7/CodeShare/blob/main/LICENSE${atob('YA==')};
+__just.styleBorderID = '_just_style_border';
+__just.styleParentBorderID = '_just_styleParent_border';
+__just.styleBorderData_AND_styleParentBorderData = "calc(var(--radius) - 2px) !important";
 
 //  SYSTEM  //
 
@@ -239,6 +242,14 @@ try{document.getElementById('bannerText').parentElement.style['z-index'] = '0';}
 if (window.location.hostname != __just.hostname) {
     window.location.hostname = __just.hostname;
 }
+
+document.querySelectorAll(${atob('YA==')}[${'${__just.styleBorderID}'}], [${'${__just.styleParentBorderID}'}]${atob('YA==')}).forEach(__just__targetElement_ => {
+  if (__just__targetElement_.id === __just.styleBorderID) {
+    __just__targetElement_.style.borderRadius = __just.styleBorderData_AND_styleParentBorderData;
+  } else if (__just__targetElement_.id === __just.styleParentBorderID) {
+    __just__targetElement_.parentElement.style.borderRadius = __just.styleBorderData_AND_styleParentBorderData;
+  }
+})
 `
 
 export async function GET(

@@ -102,6 +102,9 @@ document.body.insertAdjacentHTML('beforeend', __just.copyrightText);
 
 __just.UploadCode = (__text__) => {
   "use strict";
+  try {
+    globalThis.window.onbeforeunload = null;
+  } catch {}
   const __just = {};
   __just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
   __just.__upload__code__data__ = '';

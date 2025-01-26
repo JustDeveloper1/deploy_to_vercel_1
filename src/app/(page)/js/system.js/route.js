@@ -252,7 +252,7 @@ setInterval(() => {
     if (__just.intervalData[0].Count > 14) {
         __just.intervalData[0].Timeout = 1000;
     }
-    document.querySelectorAll(`#${__just.styleBorderID}, #${__just.styleParentBorderID}`).forEach(__just__targetElement_ => {
+    document.querySelectorAll(${atob('YA==')}#${'${__just.styleBorderID}'}, #${'${__just.styleParentBorderID}'}${atob('YA==')}).forEach(__just__targetElement_ => {
       if (__just__targetElement_.id === __just.styleBorderID) {
         __just__targetElement_.style.borderRadius = __just.styleBorderData_AND_styleParentBorderData;
       } else if (__just__targetElement_.id === __just.styleParentBorderID) {

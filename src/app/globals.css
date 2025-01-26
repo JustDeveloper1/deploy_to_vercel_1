@@ -407,3 +407,16 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
     backdrop-filter: invert(100%);
     -webkit-backdrop-filter: invert(100%);
 }
+
+._just_monacoEditorButtons {
+    position: initial !important;
+    width: initial !important;
+    height: initial !important;
+    top: initial !important;
+    left: initial !important;
+    translate: 0px !important;
+    -webkit-translate: 0px !important;
+}
+._just_monacoEditorButtons:after, ._just_monacoEditorButtons:before {
+    border-radius: calc(var(--radius) - 2px) !important;
+}

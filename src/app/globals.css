@@ -420,3 +420,7 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
 ._just_monacoEditorButtons:after, ._just_monacoEditorButtons:before {
     border-radius: calc(var(--radius) - 2px) !important;
 }
+
+.monaco-scrollable-element {
+    overflow-x: auto !important;
+}

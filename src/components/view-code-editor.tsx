@@ -52,7 +52,7 @@ export function ViewCodeEditor({
         readOnly: true,
         readOnlyMessage: {
           value:
-            'Cannot edit this read-only paste.\n\nClick the "Edit" button below for editing this paste.',
+            'Cannot edit this read-only code.\n\nClick the "Edit" button below for editing this code.',
         },
       }}
       onMount={(editor, monaco) => {

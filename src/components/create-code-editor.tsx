@@ -5,6 +5,8 @@ import { type editor as MonacoEditor } from "monaco-editor";
 import { format as prettierFormat } from "prettier/standalone";
 import { CodeEditor } from "./code-editor";
 
+import { StoreActions, StoreType, store } from "@/lib/store";
+
 import {
   type Dispatch,
   type SetStateAction,
@@ -55,6 +57,8 @@ export function CreateCodeEditor({
   const [formatLoading, setFormatLoading] = useState<boolean>(false);
   const [language, setLanguage] = useState<string>("plaintext");
   const [editor, setEditor] = useState<MonacoEditor.IStandaloneCodeEditor>();
+
+  const storeActions = store.getActions() as StoreActions;
 
   const router = useRouter();
 
@@ -133,6 +137,12 @@ export function CreateCodeEditor({
         e.preventDefault();
         formatCode();
       }
+    }
+
+    if (code !== "") {
+      storeActions.setIsEditingCode(true);
+    } else {
+      storeActions.setIsEditingCode(false);
     }
 
     window.onbeforeunload = () => (code === "" ? null : true);

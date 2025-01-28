@@ -81,7 +81,7 @@ export function DoneDialog({ id, password }: { id: string; password: string }) {
 
                 toast.success("Copied to Clipboard.", {
                   description:
-                    "This password will be used for editing this paste.",
+                    "This password will be used for editing this code.",
                 });
               }}
             >

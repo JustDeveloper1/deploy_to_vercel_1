@@ -424,3 +424,8 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
 .monaco-scrollable-element {
     overflow-x: auto !important;
 }
+
+.notific {
+    position: fixed !important;
+    width: 100% !important;
+}

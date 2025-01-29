@@ -13,9 +13,11 @@ function HeadInnerHTML() {
       <meta property="og:title" content="CodeShare" />
       <meta property="og:site_name" content="CodeShare" />
       <meta property="og:description" content="CodeShare is the best tool for storing and sharing codes and text, aka paste tool." />
+      <meta property="og:image" content="Link preview image URL">
       <meta property="twitter:card" content="summary" />
       <meta property="twitter:title" content="CodeShare" />
       <meta property="twitter:description" content="CodeShare is the best tool for storing and sharing codes and text, aka paste tool." />
+      <meta property="twitter:image" content="Twitter link preview image URL">
       <GoogleTag />
     </>
   )

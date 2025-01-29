@@ -27,7 +27,7 @@ SOFTWARE.
 const __script__ = `
 Contact: mailto:support@juststudio.is-a.dev
 Preferred-Languages: en
-Canonical: https://juststudio.is-a.dev/.well-known/security.txt
+Canonical: https://codeshare.js.org/.well-known/security.txt
 `
 
 export async function GET(

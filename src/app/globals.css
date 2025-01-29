@@ -433,3 +433,8 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
 a[href="/settings"]:first-of-type {
     display: none;
 }
+
+.light .txt12 {
+    filter: invert(0.6);
+    -webkit-filter: invert(0.6);
+}

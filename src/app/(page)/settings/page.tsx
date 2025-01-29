@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 
 const setEffects = (enabled : boolean) => {
   "use strict";
-  globalThis.localStorage.setItem('effects', enabled);
+  globalThis.localStorage.setItem('effects', `${enabled}`);
   if (!enabled) {
     globalThis.document.body.classList.add('noEffects');
   } else {

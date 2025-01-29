@@ -424,6 +424,16 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
 .monaco-scrollable-element {
     overflow-x: auto !important;
 }
+.selected-text:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #6e3bf3 !important;
+    opacity: 0.75;
+    border-radius: 3px;
+    z-index: -1;
+}
 
 .notific {
     position: fixed !important;

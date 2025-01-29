@@ -266,6 +266,13 @@ setInterval(() => {
       }
     })
 }, __just.intervalData[+[]].Timeout);
+
+function UpdContent() {
+  "use strict";
+  const content = globalThis.document.getElementById('content');
+  content.style.height = `${"${content.offsetHeight - 10}px !important"}`;
+}
+UpdContent();
 `
 
 export async function GET(

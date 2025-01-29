@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import Script from 'next/script';
 import { HeadInnerHTML } from "@/head";
 import { Banner } from 'fumadocs-ui/components/banner';
+import { useEffects } from 'fumadocs-ui/components/banner';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

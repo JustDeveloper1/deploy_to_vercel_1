@@ -1,7 +1,8 @@
 # This file created by JustStudio.
-# © 2024 JustStudio. <https://juststudio.is-a.dev>
+# Licensed under the MIT License.
+# Copyright (c) 2025 JustStudio. <https://juststudio.is-a.dev>
 #
-# Last Updated: (MM/DD/YYYY) 09/27/2024
+# Last Updated: (MM/DD/YYYY) 01/29/2025
 
 User-agent: *
 Disallow: /css/
@@ -11,8 +12,15 @@ Disallow: /*.css$
 Disallow: /*.js$
 Disallow: /*.lua$
 Allow: /sitemap.xml
+Allow: /docs/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /404
+Disallow: /500
+Disallow: /error-pages/
+Disallow: /settings
 
-Sitemap: https://juststudio.is-a.dev/sitemap.xml
+Sitemap: https://codeshare.js.org/sitemap.xml
 
 User-agent: Googlebot-News
 Disallow: /

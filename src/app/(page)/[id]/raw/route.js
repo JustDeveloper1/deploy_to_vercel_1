@@ -26,7 +26,7 @@ SOFTWARE.
 
 async function getCode(id) {
   let __script__ = ``;
-  const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`);
+  const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`, { cache: 'force-cache' });
   const code = 200;
   let data;
   const decodeHtml = (input) => {

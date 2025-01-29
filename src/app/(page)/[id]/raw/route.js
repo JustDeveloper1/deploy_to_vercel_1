@@ -1,5 +1,3 @@
-"use client";
-
 /*
 
 MIT License
@@ -28,7 +26,7 @@ SOFTWARE.
 
 async function getCode(id) {
   let __script__ = ``;
-  const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`, { cache: 'force-cache' });
+  const response = await fetch(`https://api.juststudio.is-a.dev/cs/${id}`);
   const code = 200;
   let data;
   const decodeHtml = (input) => {
@@ -45,7 +43,6 @@ async function getCode(id) {
 
   return [__script__, code];
 }
-
 export async function GET(
   request
 ) {

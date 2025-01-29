@@ -152,10 +152,10 @@ function notify(icon, text, buttonText, id, blur, type) {
     if (type && type == 'terms') {
         notificsElement.innerHTML = ${atob('YA==')}<span class="notification noHighlightEffect" id="txt45"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1437f3"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm0-240q-33 0-56.5-23.5T400-440v-320q0-33 23.5-56.5T480-840q33 0 56.5 23.5T560-760v320q0 33-23.5 56.5T480-360Z"></path></svg>By using this service, you agree to <a href="#" id="n_tl">Terms of Service</a> and <a href="#" id="n_t2">Privacy Policy</a>.<button id="${'${id}'}">I agree</button></span>${atob('YA==')};
         document.getElementById('n_tl').addEventListener("click", () => {
-            const width = window.innerWidth * 0.75;const height = window.innerHeight * 0.75;const left = (window.innerWidth - width) / 2;const top = (window.innerHeight - height) / 2;window.open('/docs/terms', 'Terms of Service', ${atob('YA==')}toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=${'${left}'},top=${'${top}'},width=${'${width}'},height=${'${height}'}${atob('YA==')});return false;
+            const width = window.innerWidth * 0.75;const height = window.innerHeight * 0.75;const left = (window.innerWidth - width) / 2;const top = (window.innerHeight - height) / 2;window.open('/docs/terms?', 'Terms of Service', ${atob('YA==')}toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=${'${left}'},top=${'${top}'},width=${'${width}'},height=${'${height}'}${atob('YA==')});return false;
         })
         document.getElementById('n_t2').addEventListener("click", () => {
-            const width = window.innerWidth * 0.75;const height = window.innerHeight * 0.75;const left = (window.innerWidth - width) / 2;const top = (window.innerHeight - height) / 2;window.open('/docs/privacy', 'Privacy Policy', ${atob('YA==')}toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=${'${left}'},top=${'${top}'},width=${'${width}'},height=${'${height}'}${atob('YA==')});return false;
+            const width = window.innerWidth * 0.75;const height = window.innerHeight * 0.75;const left = (window.innerWidth - width) / 2;const top = (window.innerHeight - height) / 2;window.open('/docs/privacy?', 'Privacy Policy', ${atob('YA==')}toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=${'${left}'},top=${'${top}'},width=${'${width}'},height=${'${height}'}${atob('YA==')});return false;
         })
         if (globalThis.localStorage.getItem('language') !== 'EN') {
             globalThis.localStorage.setItem('language-upd', '_');
@@ -224,7 +224,7 @@ function r_notific(notificElement, blur) {
 }
 function checkUserAgreement() {
     terms_accepted = localStorage.getItem('d1');
-    if (!terms_accepted) {
+    if (!terms_accepted && !(window.location.search == '?' && (window.location.pathname == "/docs/terms" || window.location.pathname == "/docs/privacy"))) {
         "use strict";
         const n_te_b_id = 'n_ta'
         let n_te = globalThis.notify(null,null,null,n_te_b_id,false,'terms');

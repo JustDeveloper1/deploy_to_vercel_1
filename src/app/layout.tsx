@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import Script from 'next/script';
 import { HeadInnerHTML } from "@/head";
 import { Banner } from 'fumadocs-ui/components/banner';
-import { useEffects } from 'fumadocs-ui/components/banner';
+import { useEffects } from './layout.client';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -54,7 +54,7 @@ export default function RootLayout({
       <body
         className={cn(
           `${geistSans.variable} ${geistMono.variable} ${grotesque.variable} ${Rubik.variable}`,
-          "font-geist antialiased",
+          "font-geist antialiased", `${useEffects}`,
         )}
         suppressHydrationWarning
       >

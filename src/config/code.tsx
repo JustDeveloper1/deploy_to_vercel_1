@@ -223,4 +223,4 @@ export function parser(options?: PrettierOptions): {
   };
 }
 
-export const runtime = 'experimental-edge'; // 'node.js' (default) | 'experimental-edge'
+export const runtime = 'node.js'; // 'node.js' (default) | 'experimental-edge'

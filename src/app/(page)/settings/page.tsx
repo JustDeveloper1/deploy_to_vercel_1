@@ -3,6 +3,16 @@
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 
+const setEffects = (enabled : boolean) => {
+  "use strict";
+  globalThis.localStorage.setItem('effects', enabled);
+  if (!enabled) {
+    globalThis.document.body.classList.add('noEffects');
+  } else {
+    globalThis.document.body.classList.remove('noEffects');
+  }
+}
+
 export default function SettingsPage() {
   const { setTheme } = useTheme();
 
@@ -118,6 +128,7 @@ export default function SettingsPage() {
             variant={"ghost"}
             className="h-fit w-fit"
             id="_just_effects_enable"
+            onClick={() => setEffects(true)}
           >
             <div className="flex flex-col">
               <div className="items-center rounded-md border-2 border-muted p-1 hover:border-accent _just_style0">
@@ -147,6 +158,7 @@ export default function SettingsPage() {
             variant={"ghost"}
             id="_just_effects_disable"
             className="h-fit w-fit"
+            onClick={() => setEffects(false)}
           >
             <div className="flex flex-col">
               <div className="items-center rounded-md border-2 border-muted bg-popover p-1 hover:bg-accent hover:text-accent-foreground _just_style5">

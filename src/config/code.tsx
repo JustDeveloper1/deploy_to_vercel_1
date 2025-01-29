@@ -11,8 +11,8 @@ import prettierParserYaml from "prettier/plugins/yaml";
 /*
 import prettierParserPhp from "@prettier/plugin-php/standalone";
 import prettierParserXml from "@prettier/plugin-xml";
-import prettierParserJava from "prettier-plugin-java";*/
-import prettierParserSql from "prettier-plugin-sql";
+import prettierParserJava from "prettier-plugin-java";
+import prettierParserSql from "prettier-plugin-sql";*/
 
 import { type LucideIcon, File, FileType2 } from "lucide-react";
 import {
@@ -210,7 +210,7 @@ export function parser(options?: PrettierOptions): {
         plugins: [prettierParserJava],
         ...options,
       },
-    },*/
+    },
     sql: {
       provider: "prettier",
       options: {
@@ -218,7 +218,7 @@ export function parser(options?: PrettierOptions): {
         plugins: [prettierParserSql],
         ...options,
       },
-    },
+    },*/
     // TODO: Add more language support
   };
 }

@@ -1,5 +1,5 @@
 # This file created by JustStudio.
-# Licensed under the MIT License.
+# Licensed under the MIT License - https://github.com/JustStudio7/CodeShare/blob/main/LICENSE
 # Copyright (c) 2025 JustStudio. <https://juststudio.is-a.dev>
 #
 # Last Updated: (MM/DD/YYYY) 01/29/2025
@@ -19,6 +19,8 @@ Disallow: /404
 Disallow: /500
 Disallow: /error-pages/
 Disallow: /settings
+Disallow: /src/
+Disallow: /scripts/
 
 Sitemap: https://codeshare.js.org/sitemap.xml
 

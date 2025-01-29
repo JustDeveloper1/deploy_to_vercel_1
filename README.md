@@ -23,7 +23,7 @@ Under the MIT License - <a href="https://github.com/JustStudio7/CodeShare/blob/m
 
 -------------
 ## Special thanks to
-<a href="https://js.org/" title="JS.ORG - the JavaScript organization">JS.ORG</a> for "codeshare.js.org" subdomain.
+<a href="https://js.org/" title="JS.ORG - the JavaScript organization">JS.ORG</a> for "[`codeshare.js.org`](https://codeshare.js.org/)" subdomain.
 
 -------------
 # API docs

@@ -429,3 +429,7 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
     position: fixed !important;
     width: 100% !important;
 }
+
+a[href="/settings"]:first-of-type {
+    display: none;
+}

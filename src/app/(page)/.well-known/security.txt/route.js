@@ -1,0 +1,5 @@
+`
+Contact: mailto:support@juststudio.is-a.dev
+Preferred-Languages: en
+Canonical: https://juststudio.is-a.dev/.well-known/security.txt
+`

@@ -476,3 +476,35 @@ aside, div[data-variant="sidebar"] {
 .light aside, .light div[data-variant="sidebar"] {
     background-color: rgba(255,255,255,0.2) !important;
 }
+
+body:not(.noEffects) {
+    padding: 5px;
+    #content {
+        border-radius: 10px;
+        overflow-x: clip;
+        overflow-y: visible;
+    }
+    #content:before {
+        content: '';
+        position: fixed;
+        border-color: hsl(var(--border));
+        border-width: 1px;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        left: 0%;
+        margin: 4.2px;
+    }
+    button[data-sidebar="menu-button"] {
+        translate: 0% -25%;
+        -webkit-translate: 0% -25%;
+    }
+}
+body:not(.noEffects) .this_is_homepage {
+    #content {
+        overflow: hidden !important;
+    }
+    #content:before {
+        border-radius: 10px;
+    }
+}

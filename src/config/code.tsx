@@ -222,3 +222,5 @@ export function parser(options?: PrettierOptions): {
     // TODO: Add more language support
   };
 }
+
+export const runtime = 'experimental-edge'; // 'node.js' (default) | 'experimental-edge'

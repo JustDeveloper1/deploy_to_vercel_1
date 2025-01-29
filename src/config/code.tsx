@@ -1,7 +1,12 @@
 import { type Options as PrettierOptions } from "prettier";
-import prettierParserBabel from "prettier/plugins/babel";
-import prettierParserTypescript from "prettier/plugins/typescript";
 import prettierPluginEstree from "prettier/plugins/estree";
+import prettierParserBabel from "prettier/plugins/babel";
+import prettierParserCss from "prettier/plugins/postcss";
+import prettierParserGraphql from "prettier/plugins/graphql";
+import prettierParserHtml from "prettier/plugins/html";
+import prettierParserMarkdown from "prettier/plugins/markdown";
+import prettierParserTypescript from "prettier/plugins/typescript";
+import prettierParserYaml from "prettier/plugins/yaml";
 
 import { type LucideIcon, File, FileType2 } from "lucide-react";
 import {
@@ -97,7 +102,7 @@ export const languages: [string, string, React.ReactNode][] = [
   ["TypeScript", "typescript", <SiTypescript key="typescript" />],
   //["vb", "vb", <File key="vb" />],
   ["XML", "xml", <SiXml key="xml" />],
-  ["YAML", "yml", <SiYaml key="yml" />],
+  ["YAML", "yaml", <SiYaml key="yaml" />],
 ];
 
 export const languageValues = languages.map((lang) => lang[1]) as [
@@ -112,6 +117,46 @@ export function parser(options?: PrettierOptions): {
   };
 } {
   return {
+    json: {
+      provider: "prettier",
+      options: {
+        parser: "json",
+        plugins: [prettierParserBabel, prettierPluginEstree],
+        ...options,
+      },
+    },
+    css: {
+      provider: "prettier",
+      options: {
+        parser: "css",
+        plugins: [prettierParserCss],
+        ...options,
+      },
+    },
+    graphql: {
+      provider: "prettier",
+      options: {
+        parser: "graphql",
+        plugins: [prettierParserGraphql],
+        ...options,
+      },
+    },
+    html: {
+      provider: "prettier",
+      options: {
+        parser: "html",
+        plugins: [prettierParserHtml],
+        ...options,
+      },
+    },
+    markdown: {
+      provider: "prettier",
+      options: {
+        parser: "markdown",
+        plugins: [prettierParserMarkdown],
+        ...options,
+      },
+    },
     javascript: {
       provider: "prettier",
       options: {
@@ -125,6 +170,14 @@ export function parser(options?: PrettierOptions): {
       options: {
         parser: "typescript",
         plugins: [prettierParserTypescript, prettierPluginEstree],
+        ...options,
+      },
+    },
+    yaml: {
+      provider: "prettier",
+      options: {
+        parser: "yaml",
+        plugins: [prettierParserYaml],
         ...options,
       },
     },

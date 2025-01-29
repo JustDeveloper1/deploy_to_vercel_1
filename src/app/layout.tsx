@@ -58,7 +58,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <div className="shadow-gradient"></div>
-        <Banner variant="rainbow" changeLayout={false} className="notific"><span id="bannerText">This service is W.I.P.</span></Banner>
+        <Banner variant="rainbow" changeLayout={false} className="notific"><span id="bannerText"></span></Banner>
         <div id="notifications"></div>
         <RootProvider>
           <div id="content">

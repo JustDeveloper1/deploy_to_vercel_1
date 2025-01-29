@@ -1,5 +1,6 @@
 import { type Options as PrettierOptions } from "prettier";
 import prettierPluginEstree from "prettier/plugins/estree";
+
 import prettierParserBabel from "prettier/plugins/babel";
 import prettierParserCss from "prettier/plugins/postcss";
 import prettierParserGraphql from "prettier/plugins/graphql";
@@ -7,6 +8,12 @@ import prettierParserHtml from "prettier/plugins/html";
 import prettierParserMarkdown from "prettier/plugins/markdown";
 import prettierParserTypescript from "prettier/plugins/typescript";
 import prettierParserYaml from "prettier/plugins/yaml";
+
+// @ts-expect-error - no types
+import prettierParserPhp from "@prettier/plugin-php/standalone";
+import prettierParserXml from "@prettier/plugin-xml";
+import prettierParserJava from "prettier-plugin-java";
+import prettierParserSql from "prettier-plugin-sql";
 
 import { type LucideIcon, File, FileType2 } from "lucide-react";
 import {
@@ -178,6 +185,38 @@ export function parser(options?: PrettierOptions): {
       options: {
         parser: "yaml",
         plugins: [prettierParserYaml],
+        ...options,
+      },
+    },
+    php: {
+      provider: "prettier",
+      options: {
+        parser: "php",
+        plugins: [prettierParserPhp],
+        ...options,
+      },
+    },
+    xml: {
+      provider: "prettier",
+      options: {
+        parser: "xml",
+        plugins: [prettierParserXml],
+        ...options,
+      },
+    },
+    java: {
+      provider: "prettier",
+      options: {
+        parser: "java",
+        plugins: [prettierParserJava],
+        ...options,
+      },
+    },
+    sql: {
+      provider: "prettier",
+      options: {
+        parser: "sql",
+        plugins: [prettierParserSql],
         ...options,
       },
     },

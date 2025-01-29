@@ -103,12 +103,12 @@ setTimeout(async () => {
             _just.data0 = !![];
 
             if (window.location.pathname !== '/') {
-                _just.monacoEditorData = globalThis.monaco.editor.getEditors()[0];
+                _just.monacoEditorData = globalThis.monaco.editor.getEditors()[+[]];
                 _just.monacoEditorData.setValue(_just.htmlDecode(_just.monacoEditorData.getValue()));
             }
         } catch (__error__) {
             _just.consoleError(__error__);
-            await new Promise(resolve => setTimeout(resolve, 10));
+            await new Promise(resolve => setTimeout(resolve, +[[+!+[]]+[+[]]]));
         }
     }
 }, 500);
@@ -132,7 +132,7 @@ _just.checkWindowLocationPathname = () => {
         } else if (window.location.pathname == '/settings' || window.location.pathname == '/settings/') {
             document.body.classList.add('this_is_settings');
         } 
-    }, 10);
+    }, +[[+!+[]]+[+[]]]);
 };
 _just.checkWindowLocationPathname();
 navigation.addEventListener('navigate', () => {

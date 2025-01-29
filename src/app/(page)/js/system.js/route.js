@@ -284,6 +284,7 @@ try {
 function UpdContent() {
   "use strict";
   const content = globalThis.document.getElementById('content');
+  content.style.height = '';
   content.style.height = ${atob('YA==')}${"${content.offsetHeight - 10}px !important"}${atob('YA==')};
 }
 if (useEffects != "noEffects") {

@@ -494,17 +494,27 @@ body:not(.noEffects) {
         top: 0%;
         left: 0%;
         margin: 4.2px;
+        .this_is_homepage {
+            border-radius: 10px;   
+        }
     }
     button[data-sidebar="menu-button"] {
         translate: 0% -25%;
         -webkit-translate: 0% -25%;
     }
 }
-body:not(.noEffects) .this_is_homepage {
+body:not(.noEffects).this_is_homepage, 
+body:not(.noEffects).this_is_settings {
+    background-color: black;
     #content {
-        overflow: hidden !important;
+        border-radius: 10px;
+        overflow: hidden;
     }
     #content:before {
-        border-radius: 10px;
+        display: none;
     }
+}
+.light body:not(.noEffects).this_is_homepage, 
+.light body:not(.noEffects).this_is_settings {
+    background-color: hsl(0 0% 90% / 1);
 }

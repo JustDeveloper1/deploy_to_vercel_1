@@ -50,6 +50,11 @@ export async function GET(
   const url = request.url;
   const id = url.slice(25, -4);
   const [codeData, codeCode] = await getCode(id);
+
+  if (!response.success)
+    return Response.json(code, {
+      status: 400,
+    });
   
   return new Response(codeData, {
     status: codeCode,

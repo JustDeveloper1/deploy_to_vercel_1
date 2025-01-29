@@ -438,3 +438,18 @@ a[href="/settings"]:first-of-type {
     filter: invert(0.6);
     -webkit-filter: invert(0.6);
 }
+.light ._just_monacoEditorButtons.notification:after {
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
+}
+.light ._just_monacoEditorButtons, 
+.light ._just_monacoEditorButtons:hover,
+.light ._just_monacoEditorButtons button:last-of-type, 
+.light ._just_monacoEditorButtons button:last-of-type:hover{
+    background-color: white;
+    border-color: white;
+    color: black;
+    svg {
+        color: black;
+    }
+}

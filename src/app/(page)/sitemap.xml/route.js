@@ -93,3 +93,11 @@ SOFTWARE.
 </url>
 </urlset>
 `
+
+export async function GET(
+  request
+) {
+  return new Response(__script__, {
+    status: 200,
+  });
+}

@@ -1,0 +1,34 @@
+# This file created by JustStudio.
+# Licensed under the MIT License - https://github.com/JustStudio7/CodeShare/blob/main/LICENSE
+# Copyright (c) 2025 JustStudio. <https://juststudio.is-a.dev>
+#
+# Last Updated: (MM/DD/YYYY) 01/29/2025
+
+User-agent: *
+Disallow: /css/
+Disallow: /js/
+Disallow: /*.json$
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.lua$
+Disallow: /src/
+Disallow: /scripts/
+Disallow: /public/
+
+Sitemap: https://codeshare.js.org/sitemap.xml
+
+User-agent: Googlebot-News
+Disallow: /
+Crawl-delay: 5
+User-agent: Googlebot-Video
+Disallow: /
+Crawl-delay: 5
+User-agent: Baiduspider
+Disallow: /
+Crawl-delay: 5
+User-agent: facebookexternalhit
+Disallow: /
+Crawl-delay: 5
+User-agent: YandexAdditionalBot
+Disallow: /
+Crawl-delay: 5

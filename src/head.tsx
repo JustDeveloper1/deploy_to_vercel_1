@@ -1,9 +1,6 @@
 "use client";
 
-import Script from 'next/script';
 import { GoogleTag } from "@/config/head/gtag";
-
-const EncoderjsURL = "https://juststudio.is-a.dev/js/other/encoder@1.0.0.js";
 
 function HeadInnerHTML() {
   return (
@@ -22,13 +19,6 @@ function HeadInnerHTML() {
       <meta property="twitter:description" content="CodeShare is the best tool for storing and sharing codes and text, aka paste tool." />
       <meta property="twitter:image" content="https://j.is-a.dev/CodeShare/public/static/images/banner/CodeShare.svg" />
       <GoogleTag />
-      <Script src={EncoderjsURL} type="module" />
-      <Script id="test_Encoder-js" type="module">
-        {`
-          import { encode, decode } from "${EncoderjsURL}";
-          encode('a');
-        `}
-      </Script>
     </>
   )
 }

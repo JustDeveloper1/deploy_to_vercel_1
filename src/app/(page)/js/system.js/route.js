@@ -267,12 +267,28 @@ setInterval(() => {
     })
 }, __just.intervalData[+[]].Timeout);
 
+const getEffects = () => {
+  "use strict";
+  const effects = globalThis.localStorage.getItem('effects');
+  if ((!effects) || effects == null || effects == ${atob('YA==')}${"${!![]}"}${atob('YA==')}) {
+    return []+[];
+  } else {
+    return "noEffects";
+  }
+}
+const useEffects = getEffects();
+try {
+  document.body.classList.add(useEffects);
+} catch {}
+
 function UpdContent() {
   "use strict";
   const content = globalThis.document.getElementById('content');
-  content.style.height = `${"${content.offsetHeight - 10}px !important"}`;
+  content.style.height = ${atob('YA==')}${"${content.offsetHeight - 10}px !important"}${atob('YA==')};
 }
-UpdContent();
+if (useEffects != "noEffects") {
+  UpdContent();
+}
 `
 
 export async function GET(

@@ -112,7 +112,7 @@ __just.UploadCode = (__text__) => {
   __just.pre__upload__code__data__.code = __just.monacoEditorData.getValue();
   __just.pre__upload__code__data__.lang = __just.monacoEditorData.getModel().getLanguageIdAtPosition();
   if (__text__) {
-    __just.pre__upload__code__data__.lang = 'text';
+    __just.pre__upload__code__data__.lang = 'plaintext';
   } 
   __just.__upload__code__data__ = encodeURIComponent(JSON.stringify(__just.pre__upload__code__data__));
   setTimeout(() => {
@@ -123,10 +123,10 @@ __just.UploadCode = (__text__) => {
 __just.Publish = {}
 
 __just.Publish.Code = () => {
-  __just.UploadCode(false);
+  __just.UploadCode(![]);
 }
 __just.Publish.Text = () => {
-  __just.UploadCode(true);
+  __just.UploadCode(!![]);
 }
 __just.Publish.Draft = () => {
   "use strict";
@@ -152,7 +152,7 @@ function notify(icon, text, buttonText, id, blur, type) {
     if (type && type == 'terms') {
         notificsElement.innerHTML = ${atob('YA==')}<span class="notification noHighlightEffect" id="txt45"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1437f3"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120Zm0-240q-33 0-56.5-23.5T400-440v-320q0-33 23.5-56.5T480-840q33 0 56.5 23.5T560-760v320q0 33-23.5 56.5T480-360Z"></path></svg>By using this service, you agree to the <a href="#" id="n_tl"> User Agreement</a>.<button id="${'${id}'}">I agree</button></span>${atob('YA==')};
         document.getElementById('n_tl').addEventListener("click", () => {
-            const width = window.innerWidth * 0.75;const height = window.innerHeight * 0.75;const left = (window.innerWidth - width) / 2;const top = (window.innerHeight - height) / 2;window.open('https://juststudio.is-a.dev/terms?navbar=false', 'User Agreement', ${atob('YA==')}toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=${'${left}'},top=${'${top}'},width=${'${width}'},height=${'${height}'}${atob('YA==')});return false;
+            const width = window.innerWidth * 0.75;const height = window.innerHeight * 0.75;const left = (window.innerWidth - width) / 2;const top = (window.innerHeight - height) / 2;window.open('/docs/terms', 'User Agreement', ${atob('YA==')}toolbar=no,status=no,menubar=no,scrollbars=no,resizable=no,left=${'${left}'},top=${'${top}'},width=${'${width}'},height=${'${height}'}${atob('YA==')});return false;
         })
         if (globalThis.localStorage.getItem('language') !== 'EN') {
             globalThis.localStorage.setItem('language-upd', '_');
@@ -208,7 +208,7 @@ function r_notific(notificElement, blur) {
         });
         globalThis.document.getElementById('content').style.scale = '';
     }
-    notificElement.style.opacity = '0';
+    notificElement.style.opacity = +[]+[];
     notificElement.style.translate = '-50% 30%';
     setTimeout(() => {
         try {
@@ -247,13 +247,13 @@ if (window.location.hostname != __just.hostname) {
 }
 
 __just.intervalData = [];
-__just.intervalData[0] = {};
-__just.intervalData[0].Timeout = 100;
-__just.intervalData[0].Count = 0;
+__just.intervalData[+[]] = {};
+__just.intervalData[+[]].Timeout = 100;
+__just.intervalData[+[]].Count = +[];
 setInterval(() => {
-    __just.intervalData[0].Count++;
-    if (__just.intervalData[0].Count > 14) {
-        __just.intervalData[0].Timeout = 1000;
+    __just.intervalData[+[]].Count++;
+    if (__just.intervalData[+[]].Count > 14) {
+        __just.intervalData[+[]].Timeout = 1000;
     }
     document.querySelectorAll(${atob('YA==')}#${'${__just.styleBorderID}'}, #${'${__just.styleParentBorderID}'}${atob('YA==')}).forEach(__just__targetElement_ => {
       if (__just__targetElement_.id === __just.styleBorderID) {
@@ -262,7 +262,7 @@ setInterval(() => {
         __just__targetElement_.parentElement.style.borderRadius = __just.styleBorderData_AND_styleParentBorderData;
       }
     })
-}, __just.intervalData[0].Timeout);
+}, __just.intervalData[+[]].Timeout);
 `
 
 export async function GET(

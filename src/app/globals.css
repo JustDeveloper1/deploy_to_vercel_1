@@ -259,6 +259,10 @@ blockquote p:after, blockquote p:before {
   margin-right: -10px;
   transition: 500ms;
 }
+.notification a#n_tl {
+    margin-right: -5px;
+}
+
 .notification img:hover, .notification svg:hover {
   scale: 115%;
   background-color: transparent;

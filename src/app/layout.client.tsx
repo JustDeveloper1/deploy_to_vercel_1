@@ -2,7 +2,7 @@
 const getEffects = () => {
   "use strict";
   const effects = globalThis.localStorage.getItem('effects');
-  if (effects == null || effects == `true`) {
+  if ((!effects) || effects == null || effects == `true`) {
     return '';
   } else {
     return "noEffects";

@@ -117,6 +117,14 @@ export function parser(options?: PrettierOptions): {
   };
 } {
   return {
+    javascript: {
+      provider: "prettier",
+      options: {
+        parser: "babel",
+        plugins: [prettierParserBabel, prettierPluginEstree],
+        ...options,
+      },
+    },
     json: {
       provider: "prettier",
       options: {
@@ -154,14 +162,6 @@ export function parser(options?: PrettierOptions): {
       options: {
         parser: "markdown",
         plugins: [prettierParserMarkdown],
-        ...options,
-      },
-    },
-    javascript: {
-      provider: "prettier",
-      options: {
-        parser: "babel",
-        plugins: [prettierParserBabel, prettierPluginEstree],
         ...options,
       },
     },

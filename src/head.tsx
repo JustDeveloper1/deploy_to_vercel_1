@@ -23,7 +23,7 @@ function HeadInnerHTML() {
       <meta property="twitter:image" content="https://j.is-a.dev/CodeShare/public/static/images/banner/CodeShare.svg" />
       <GoogleTag />
       <Script src={EncoderjsURL} type="module" />
-      <Script id="test_Encoder-js">
+      <Script id="test_Encoder-js" type="module">
         {`
           import { encode, decode } from "${EncoderjsURL}";
           encode('a');

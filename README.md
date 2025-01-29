@@ -27,6 +27,8 @@ Under the MIT License - <a href="https://github.com/JustStudio7/CodeShare/blob/m
 
 -------------
 # API docs
+> BASE URL: api.juststudio.is-a.dev <br/>
+
 Full version <a href="https://codeshare.js.org/docs/api-route" title="Docs - API Routes | CodeShare">**here**</a>.
 
 > [!WARNING]

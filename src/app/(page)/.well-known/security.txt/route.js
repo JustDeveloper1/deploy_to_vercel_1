@@ -29,3 +29,11 @@ Contact: mailto:support@juststudio.is-a.dev
 Preferred-Languages: en
 Canonical: https://juststudio.is-a.dev/.well-known/security.txt
 `
+
+export async function GET(
+  request
+) {
+  return new Response(__script__, {
+    status: 200,
+  });
+}

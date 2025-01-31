@@ -525,3 +525,8 @@ aside, div[data-variant="sidebar"] {
       background-color: hsl(0 0% 90% / 1);
   }
 }
+@media(max-width: 767px) {
+    .effectsSelector {
+        display: none;
+    }
+}

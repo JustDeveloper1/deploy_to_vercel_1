@@ -333,24 +333,7 @@ p.noHighlightEffect, h1.noHighlightEffect, span.noHighlightEffect {
     border-radius: 0.75rem;
     overflow: hidden;
 }
-body:not(.noEffects) {
-    ._just_monacoEditorParentParent:hover,
-    .settings-effects-enabled #content>div>main>main>div>div.p-6.pt-0.-mt-4>div>div.max-h-screen.rounded-xl>section:hover {
-        filter: drop-shadow(5px 5px 15px rgba(110,59,243,.5));
-        -webkit-filter: drop-shadow(5px 5px 15px rgba(110,59,243,.5));
-        border-width: 3px;
-        border-color: #6e3bf3
-    }
-    
-    ._just_monacoEditorParentParent:active,
-    .settings-effects-enabled #content>div>main>main>div>div.p-6.pt-0.-mt-4>div>div.max-h-screen.rounded-xl>section:active {
-        filter: drop-shadow(5px 5px 15px hsl(257deg 88% 83%/50%));
-        -webkit-filter: drop-shadow(5px 5px 15px rgba(195,174,250,.5));
-        border-width: 3px;
-        border-color: #fff;
-        transition: 0s
-    }
-}
+
 .settings-effects-enabled #content > div > main > main > div > div.p-6.pt-0.-mt-4 > div > div.flex.flex-col.gap-4.md\:flex-row.md\:justify-between.md\:gap-0 > div > button, 
 .settings-effects-enabled #content > div > main > main > div > div.p-6.pt-0.-mt-4 > div > div.flex.flex-col.gap-4.md\:flex-row.md\:justify-between.md\:gap-0 > button, 
 .settings-effects-enabled #content > div > main > main > div > div.p-6.pt-0.-mt-4 > div > div.flex.flex-col.gap-4.md\:flex-row.md\:justify-between.md\:gap-0 > div > div,
@@ -524,6 +507,25 @@ aside, div[data-variant="sidebar"] {
   .light body:not(.noEffects).this_is_settings {
       background-color: hsl(0 0% 90% / 1);
   }
+
+  body:not(.noEffects) {
+    ._just_monacoEditorParentParent:hover,
+    .settings-effects-enabled #content>div>main>main>div>div.p-6.pt-0.-mt-4>div>div.max-h-screen.rounded-xl>section:hover {
+        filter: drop-shadow(5px 5px 15px rgba(110,59,243,.5));
+        -webkit-filter: drop-shadow(5px 5px 15px rgba(110,59,243,.5));
+        border-width: 3px;
+        border-color: #6e3bf3
+    }
+    
+    ._just_monacoEditorParentParent:active,
+    .settings-effects-enabled #content>div>main>main>div>div.p-6.pt-0.-mt-4>div>div.max-h-screen.rounded-xl>section:active {
+        filter: drop-shadow(5px 5px 15px hsl(257deg 88% 83%/50%));
+        -webkit-filter: drop-shadow(5px 5px 15px rgba(195,174,250,.5));
+        border-width: 3px;
+        border-color: #fff;
+        transition: 0s
+    }
+}
 }
 @media(max-width: 767px) {
     .effectsSelector {

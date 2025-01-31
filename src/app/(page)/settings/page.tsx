@@ -116,11 +116,11 @@ export default function SettingsPage() {
           </Button>
         </section>
 
-        <section className="space-y-2">
+        <section className="space-y-2 effectsSelector">
           <div>
             <p className="text-lg font-medium">Effects</p>
             <p className="text-sm text-muted-foreground">
-              Enable or disable fresh effects for this website.
+              Enable or disable some fresh effects for this website.
             </p>
           </div>
           <Button

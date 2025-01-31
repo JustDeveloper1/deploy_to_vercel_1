@@ -19,6 +19,7 @@ function HeadInnerHTML() {
       <meta property="twitter:description" content="CodeShare is the best tool for storing and sharing codes and text, aka paste tool." />
       <meta property="twitter:image" content="https://j.is-a.dev/CodeShare/public/static/images/banner/CodeShare.svg" />
       <GoogleTag />
+      /js/third-party/confetti.min.js
     </>
   )
 }

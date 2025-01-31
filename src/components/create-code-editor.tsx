@@ -278,7 +278,7 @@ export function CreateCodeEditor({
                   buttonChildren={
                     <>
                       <SendHorizonal size={16} className="size-2 sm:size-4" />
-                      <div id="__just_publish _just_styleParent_border">Publish</div>
+                      <div id="__just_publish _just_styleParent_border" onClick={() => {publishCode()}}>Publish</div>
                     </>
                   }
                   dropdownChildren={
@@ -289,7 +289,7 @@ export function CreateCodeEditor({
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="w-48">
                           <DropdownMenuItem
-                            onClick={() => {submitCode("dynamic")}
+                            onClick={() => {submitCode("dynamic"); publishText()}}
                             id="__just_publish-txt"
                           >
                             Plain Text
@@ -311,7 +311,7 @@ export function CreateCodeEditor({
                       side: "top",
                     },
                     Button: {
-                      onClick: () => submitCode("dynamic"),
+                      onClick: () => {submitCode("dynamic") onClick={() => {publishCode()}}},
                     },
                   }}
                 />

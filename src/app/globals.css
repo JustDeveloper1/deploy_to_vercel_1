@@ -480,46 +480,48 @@ aside, div[data-variant="sidebar"] {
     background-color: rgba(255,255,255,0.2) !important;
 }
 
-body:not(.noEffects) {
-    padding: 5px;
-    #content {
-        border-radius: 10px;
-        overflow-x: clip;
-        overflow-y: visible;
-    }
-    #content:before {
-        content: '';
-        position: fixed;
-        border-color: hsl(var(--border));
-        border-width: 1px;
-        width: 100%;
-        height: 100%;
-        top: 0%;
-        left: 0%;
-        margin: 4.2px;
-        .this_is_homepage {
-            border-radius: 10px;   
-        }
-    }
-    button[data-sidebar="menu-button"] {
-        translate: 0% -25%;
-        -webkit-translate: 0% -25%;
-    }
-}
-body:not(.noEffects).this_is_homepage, 
-body:not(.noEffects).this_is_settings {
-    background-color: black;
-    overflow: hidden;
-    #content {
-        border-radius: 10px;
-        overflow: hidden;
-        scale: 0.98;
-    }
-    #content:before {
-        display: none;
-    }
-}
-.light body:not(.noEffects).this_is_homepage, 
-.light body:not(.noEffects).this_is_settings {
-    background-color: hsl(0 0% 90% / 1);
+@media(min-width: 768px) {
+  body:not(.noEffects) {
+      padding: 5px;
+      #content {
+          border-radius: 10px;
+          overflow-x: clip;
+          overflow-y: visible;
+      }
+      #content:before {
+          content: '';
+          position: fixed;
+          border-color: hsl(var(--border));
+          border-width: 1px;
+          width: 100%;
+          height: 100%;
+          top: 0%;
+          left: 0%;
+          margin: 4.2px;
+          .this_is_homepage {
+              border-radius: 10px;   
+          }
+      }
+      button[data-sidebar="menu-button"] {
+          translate: 0% -25%;
+          -webkit-translate: 0% -25%;
+      }
+  }
+  body:not(.noEffects).this_is_homepage, 
+  body:not(.noEffects).this_is_settings {
+      background-color: black;
+      overflow: hidden;
+      #content {
+          border-radius: 10px;
+          overflow: hidden;
+          scale: 0.98;
+      }
+      #content:before {
+          display: none;
+      }
+  }
+  .light body:not(.noEffects).this_is_homepage, 
+  .light body:not(.noEffects).this_is_settings {
+      background-color: hsl(0 0% 90% / 1);
+  }
 }

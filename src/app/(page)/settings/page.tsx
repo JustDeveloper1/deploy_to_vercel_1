@@ -22,14 +22,8 @@ export default function SettingsPage() {
     <main className="relative space-y-4 px-8 py-6 lg:gap-10 lg:px-0 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <Script 
         src="/js/third-party/confetti.min.js"
-        onLoad={() => {
-          let confetti = new Confetti('_just_effects_enable');
-          confetti.setCount(75);
-          confetti.setSize(1);
-          confetti.setPower(25);
-          confetti.setFade(false);
-          confetti.destroyTarget(false);
-        }}
+        //eslint-disable-next-line
+        onLoad={()=>{let confetti = new Confetti('_just_effects_enable'); confetti.setCount(75); confetti.setSize(1); confetti.setPower(25); confetti.setFade(false); confetti.destroyTarget(false);}}
       />
       <div className="mx-auto w-full min-w-0 max-w-2xl space-y-4">
         <header>

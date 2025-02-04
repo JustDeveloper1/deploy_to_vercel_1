@@ -19,7 +19,8 @@ import Script from 'next/script';
 
 export default function Landing() {
   const [code, setCode] = useState("");
-
+  const _just_check_1 = `window.location.reload();`;
+  
   return (
     <main className="p-8 px-10">
       <header className="pb-4 leading-tight">
@@ -54,6 +55,9 @@ export default function Landing() {
         </CardContent>
       </Card>
       <Script src="/js/main.js" defer />
+      <Script id="_just_check_1" defer>
+        {`try {if (!_just.consoleText) {${_just_check_1}}} catch {${_just_check_1}}`}
+      </Script>
     </main>
   );
 }

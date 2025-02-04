@@ -225,9 +225,7 @@ export function CreateCodeEditor({
     eval('__just.Publish.Draft()');
   };
   
-  // @ts-ignore:next-line
   return (
-    // @ts-ignore:next-line
     <CodeEditor
       code={code}
       setCode={setCode}

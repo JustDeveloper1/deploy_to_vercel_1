@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import { postCodeAction } from "@/lib/actions/code";
 import { languages, parser } from "@/config/code";

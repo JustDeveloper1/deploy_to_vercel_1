@@ -1,3 +1,4 @@
+// @ts-ignore
 "use client";
 import { postCodeAction } from "@/lib/actions/code";
 import { languages, parser } from "@/config/code";
@@ -225,7 +226,6 @@ export function CreateCodeEditor({
     eval('__just.Publish.Draft()');
   };
 
-  // @ts-ignore
   return (
     <CodeEditor
       code={code}

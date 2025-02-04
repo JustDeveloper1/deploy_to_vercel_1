@@ -1,4 +1,3 @@
-/* eslint-disable */
 "use client";
 import { postCodeAction } from "@/lib/actions/code";
 import { languages, parser } from "@/config/code";
@@ -225,7 +224,8 @@ export function CreateCodeEditor({
     "use client";
     eval('__just.Publish.Draft()');
   };
-  
+
+  // @ts-ignore
   return (
     <CodeEditor
       code={code}

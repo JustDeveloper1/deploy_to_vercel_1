@@ -224,8 +224,8 @@ export function CreateCodeEditor({
     "use client";
     eval('__just.Publish.Draft()');
   };
-  
-  return (
+
+  return ( // @ts-ignore:next-line
     <CodeEditor
       code={code}
       setCode={setCode}

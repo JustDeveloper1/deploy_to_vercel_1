@@ -227,7 +227,6 @@ export function CreateCodeEditor({
   };
 
   return (
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     <CodeEditor
       code={code}
       setCode={setCode}

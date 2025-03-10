@@ -8,6 +8,7 @@ function GoogleTag() {
       <Script id="gtag"> 
         {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-CRFMGJ9Y7D');`}
       </Script>
+      {/* End Google tag */}
     </>
   )
 }

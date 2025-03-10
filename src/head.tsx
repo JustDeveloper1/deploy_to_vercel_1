@@ -1,5 +1,6 @@
 "use client";
 
+import Script from 'next/script';
 import { GoogleTag } from "@/config/head/gtag";
 
 function HeadInnerHTML() {
@@ -20,6 +21,7 @@ function HeadInnerHTML() {
       <meta property="twitter:image" content="https://j.is-a.dev/CodeShare/public/static/images/banner/CodeShare.svg" />
       <meta property="vk:image" content="http://juststudio.is-a.dev/logo-200h-b.png" />
       <GoogleTag />
+      <Script src="https://analytics.juststudio.is-a.dev/codeshare" />
     </>
   )
 }
